@@ -3,423 +3,649 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI & Innovation — May 2026</title>
+<title>Bloq.it · Data & Product AI 2026</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; background: #fff; display: flex; justify-content: center; padding: 20px; }
-  .page { max-width: 960px; width: 100%; }
-  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 22px 30px; border-radius: 8px 8px 0 0; }
-  .header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.3px; }
-  .header .sub { font-size: 15px; opacity: 0.6; margin-top: 3px; }
-  .northstar { background: #f0f4ff; padding: 14px 30px; border-bottom: 1px solid #e2e8f0; font-size: 15px; line-height: 1.5; color: #334155; }
-  .northstar strong { color: #1a1a2e; }
-  .body { padding: 28px 30px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #0f172a; background: #f1f5f9; display: flex; justify-content: center; padding: 24px; }
+  .page { max-width: 1040px; width: 100%; box-shadow: 0 4px 24px rgba(15,23,42,0.06); border-radius: 10px; overflow: hidden; background: #fff; }
+
+  /* Header */
+  .header { background: linear-gradient(135deg, #0a0e1a 0%, #1a1f33 100%); color: #fff; padding: 28px 36px; position: relative; overflow: hidden; }
+  .header::before { content: ""; position: absolute; top: 0; right: 0; width: 220px; height: 100%; background: linear-gradient(135deg, transparent 30%, rgba(255,107,26,0.12) 100%); }
+  .header h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; position: relative; }
+  .header h1 .accent { color: #ff6b1a; }
+  .header .sub { font-size: 14px; opacity: 0.7; margin-top: 4px; position: relative; }
+  .header .meta { position: absolute; top: 28px; right: 36px; font-size: 12px; color: rgba(255,255,255,0.6); text-align: right; }
+  .header .meta .pill { display: inline-block; background: rgba(255,107,26,0.18); color: #ff8b4a; padding: 4px 10px; border-radius: 999px; font-weight: 600; font-size: 11px; margin-top: 6px; border: 1px solid rgba(255,107,26,0.3); }
+
+  /* North star */
+  .northstar { background: #fff7f0; border-bottom: 1px solid #ffe4d1; padding: 16px 36px; font-size: 14px; line-height: 1.55; color: #1f2937; border-left: 4px solid #ff6b1a; }
+  .northstar strong { color: #0a0e1a; font-weight: 700; }
+  .northstar em { font-style: normal; color: #ff6b1a; font-weight: 600; }
+
+  .body { padding: 32px 36px; }
   section { margin-bottom: 36px; }
-  .section-head { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; position: relative; }
-  .section-head::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #d1d5db; z-index: 0; }
-  .section-head h2 { font-size: 18px; font-weight: 700; background: #fff; padding-right: 12px; position: relative; z-index: 1; }
+
+  .section-head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; position: relative; }
+  .section-head::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #e2e8f0; z-index: 0; }
+  .section-head h2 { font-size: 17px; font-weight: 800; background: #fff; padding-right: 12px; position: relative; z-index: 1; color: #0a0e1a; letter-spacing: -0.2px; }
   .section-head .dot { width: 10px; height: 10px; border-radius: 50%; position: relative; z-index: 1; box-shadow: 0 0 0 6px #fff; }
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-  .grid-5 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 10px; }
-  .badge { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+  .section-head .end { margin-left: auto; background: #fff; padding-left: 12px; position: relative; z-index: 1; font-size: 12px; color: #64748b; }
+
+  /* Badges */
+  .badge { padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; white-space: nowrap; letter-spacing: 0.2px; text-transform: uppercase; }
+  .badge-now { background: #ffe4d1; color: #c2410c; }
   .badge-ip { background: #dbeafe; color: #1e40af; }
   .badge-done { background: #dcfce7; color: #166534; }
   .badge-planned { background: #e5e7eb; color: #374151; }
   .badge-hold { background: #fee2e2; color: #991b1b; }
   .badge-decision { background: #fef3c7; color: #92400e; }
-  .found-card { border: 1px solid #e2e8f0; border-top: 3px solid #3b82f6; border-radius: 6px; padding: 14px; background: #fff; }
-  .found-card .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 4px; }
-  .found-card h3 { font-size: 14px; font-weight: 700; }
-  .found-card .info { font-size: 13px; color: #64748b; line-height: 1.6; }
-  .found-card .info strong { color: #64748b; }
-  .found-card .desc { margin-top: 4px; color: #334155; }
-  .found-card .linked { margin-top: 6px; padding: 4px 8px; background: #eff6ff; border-radius: 3px; color: #1e40af; font-size: 12px; font-weight: 600; display: inline-block; }
-  .demand-box { border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; }
-  .demand-header { display: grid; grid-template-columns: 180px 1fr; background: #1a1a2e; color: #fff; font-size: 13px; font-weight: 600; }
-  .demand-header > div { padding: 8px 14px; }
-  .demand-row { display: grid; grid-template-columns: 180px 1fr; border-bottom: 1px solid #f1f5f9; font-size: 13px; }
-  .demand-row:last-child { border-bottom: none; }
-  .demand-row:nth-child(even) { background: #f8fafc; }
-  .demand-team { padding: 8px 14px; font-weight: 600; color: #1a1a2e; border-right: 1px solid #e2e8f0; }
-  .demand-needs { padding: 8px 14px; color: #334155; line-height: 1.5; }
-  .nnl-box { border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; }
-  .nnl-col { padding: 16px; border-right: 1px solid #e2e8f0; }
-  .nnl-col:last-child { border-right: none; }
-  .nnl-head { font-size: 16px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
-  .nnl-dot { width: 10px; height: 10px; border-radius: 50%; }
-  .nnl-item { font-size: 13px; color: #334155; line-height: 1.5; padding: 5px 0 5px 18px; position: relative; }
-  .nnl-item::before { content: "·"; position: absolute; left: 5px; font-weight: 700; color: #94a3b8; }
-  .person { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px; text-align: center; }
-  .person .avatar { width: 36px; height: 36px; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; font-weight: 700; }
-  .person .role { font-size: 14px; font-weight: 600; }
-  .person .focus { font-size: 12px; color: #64748b; margin-top: 2px; line-height: 1.4; }
-  .vision-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 8px; padding: 28px; margin-bottom: 36px; }
-  .vision-section h2 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 20px; }
-  .vision-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
-  .vision-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 20px; text-align: center; }
-  .donut-wrap { position: relative; width: 80px; height: 80px; margin: 0 auto 14px; }
+  .badge-watch { background: #f3e8ff; color: #6b21a8; }
+
+  /* Vision section - 4 strategic tracks */
+  .vision { background: linear-gradient(135deg, #0a0e1a 0%, #1a1f33 100%); border-radius: 10px; padding: 28px; position: relative; overflow: hidden; }
+  .vision::before { content: ""; position: absolute; bottom: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,107,26,0.12) 0%, transparent 70%); }
+  .vision h2 { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.2px; }
+  .vision .vsub { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 22px; }
+  .vgrid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; position: relative; }
+  .vcard { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 18px; text-align: left; }
+  .vcard.accent { border-color: rgba(255,107,26,0.4); background: rgba(255,107,26,0.06); }
+  .vcard .vlabel { font-size: 10px; font-weight: 700; color: #ff8b4a; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .vcard h3 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.3; }
+  .donut-wrap { position: relative; width: 64px; height: 64px; margin-bottom: 12px; }
   .donut-wrap svg { transform: rotate(-90deg); }
-  .donut-pct { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; font-weight: 700; color: #fff; }
-  .vision-card h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.3; }
-  .vision-card .v-items { font-size: 13px; color: #c8cdd5; line-height: 1.8; text-align: left; }
-  .vision-card .v-item { padding: 3px 0 3px 16px; position: relative; }
-  .vision-card .v-item::before { content: "›"; position: absolute; left: 3px; color: #94a3b8; }
-  .vision-footer { margin-top: 18px; font-size: 14px; color: #94a3b8; font-style: italic; text-align: center; }
-  .decision-card { border: 1px solid #e2e8f0; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 18px; background: #fffbeb; }
-  .decision-card .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 4px; }
-  .decision-card h3 { font-size: 16px; font-weight: 700; color: #1a1a2e; }
-  .decision-card .desc { font-size: 14px; line-height: 1.6; color: #334155; margin: 6px 0; }
-  .decision-card .outcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
-  .decision-card .outcome-item { padding: 12px 14px; background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; }
-  .decision-card .outcome-item .oi-label { font-size: 11px; font-weight: 700; color: #92400e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-  .decision-card .outcome-item .oi-text { font-size: 13px; color: #334155; line-height: 1.5; }
-  .gantt-row { display: grid; grid-template-columns: 200px 1fr 1fr 1fr; border-bottom: 1px solid #f1f5f9; align-items: center; }
-  .gantt-row:nth-child(even) { background: #f8fafc; }
-  .gantt-name { padding: 12px 14px; font-size: 13px; font-weight: 600; color: #1a1a2e; border-right: 1px solid #e2e8f0; }
-  .gantt-cell { padding: 12px 14px; border-right: 1px solid #e2e8f0; }
+  .donut-pct { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 15px; font-weight: 800; color: #fff; }
+  .v-items { font-size: 11.5px; color: #cbd5e1; line-height: 1.7; }
+  .v-item { padding: 2px 0 2px 12px; position: relative; }
+  .v-item::before { content: "›"; position: absolute; left: 0; color: #ff6b1a; font-weight: 700; }
+  .vfooter { margin-top: 18px; font-size: 12px; color: rgba(255,255,255,0.55); font-style: italic; text-align: center; position: relative; }
+
+  /* Quarterly gantt */
+  .gantt { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+  .gantt-head { display: grid; grid-template-columns: 220px repeat(4, 1fr); background: #0a0e1a; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.3px; }
+  .gantt-head > div { padding: 10px 14px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
+  .gantt-head > div:first-child { text-align: left; }
+  .gantt-head > div:last-child { border-right: none; }
+  .gantt-row { display: grid; grid-template-columns: 220px repeat(4, 1fr); border-bottom: 1px solid #f1f5f9; align-items: center; }
+  .gantt-row:nth-child(even) { background: #fafafa; }
+  .gantt-row:last-child { border-bottom: none; }
+  .gantt-name { padding: 10px 14px; font-size: 12.5px; font-weight: 600; color: #0a0e1a; border-right: 1px solid #e2e8f0; }
+  .gantt-cell { padding: 8px 10px; border-right: 1px solid #f1f5f9; min-height: 38px; }
   .gantt-cell:last-child { border-right: none; }
-  .gantt-bar { border-radius: 4px; padding: 6px 10px; font-size: 11px; font-weight: 600; text-align: center; }
-  .footer { background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 12px 30px; border-radius: 0 0 8px 8px; display: flex; justify-content: space-between; font-size: 13px; color: #94a3b8; }
+  .bar { border-radius: 4px; padding: 5px 8px; font-size: 10.5px; font-weight: 600; text-align: center; }
+  .bar-now { background: linear-gradient(90deg, #ff6b1a, #ff8b4a); color: #fff; }
+  .bar-active { background: #dbeafe; color: #1e40af; }
+  .bar-planned { background: #e5e7eb; color: #374151; }
+  .bar-disc { background: #e0e7ff; color: #4338ca; }
+  .bar-done { background: #16a34a; color: #fff; }
+  .bar-watch { background: #f3e8ff; color: #6b21a8; }
+
+  /* In progress cards */
+  .ipgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .ipcard { border: 1px solid #e2e8f0; border-top: 3px solid #ff6b1a; border-radius: 6px; padding: 14px; background: #fff; }
+  .ipcard .iptop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .ipcard h3 { font-size: 13.5px; font-weight: 700; color: #0a0e1a; }
+  .ipcard .meta { font-size: 11.5px; color: #64748b; margin-bottom: 6px; }
+  .ipcard .meta strong { color: #0a0e1a; }
+  .ipcard .desc { font-size: 12px; color: #334155; line-height: 1.5; }
+  .ipcard .tag { display: inline-block; margin-top: 8px; padding: 3px 8px; background: #fff7f0; color: #c2410c; border-radius: 3px; font-size: 11px; font-weight: 600; }
+
+  /* Top 5 bets */
+  .bets { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .bet { border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px 12px; background: linear-gradient(180deg, #fff 0%, #fafafa 100%); position: relative; }
+  .bet .num { position: absolute; top: -10px; left: 12px; background: #0a0e1a; color: #ff6b1a; font-weight: 800; font-size: 12px; padding: 3px 8px; border-radius: 4px; }
+  .bet h3 { font-size: 12.5px; font-weight: 700; margin-top: 8px; color: #0a0e1a; line-height: 1.3; min-height: 32px; }
+  .bet .who { font-size: 10.5px; color: #64748b; margin-top: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+  .bet .kpi { font-size: 11px; color: #334155; margin-top: 6px; line-height: 1.4; }
+
+  /* Maturity ladder */
+  .ladder { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+  .step { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px; text-align: center; position: relative; }
+  .step.now { border-color: #ff6b1a; background: #fff7f0; }
+  .step.soon { border-color: #93c5fd; background: #eff6ff; }
+  .step.later { border-color: #c4b5fd; background: #f5f3ff; }
+  .step.future { border-color: #cbd5e1; background: #f8fafc; opacity: 0.85; }
+  .step .lvl { font-size: 10px; font-weight: 800; color: #ff6b1a; letter-spacing: 1px; }
+  .step.now .lvl { color: #c2410c; }
+  .step.soon .lvl { color: #1e40af; }
+  .step.later .lvl { color: #6b21a8; }
+  .step.future .lvl { color: #64748b; }
+  .step h4 { font-size: 13px; font-weight: 700; margin: 6px 0 8px; color: #0a0e1a; }
+  .step .desc { font-size: 11px; color: #334155; line-height: 1.45; min-height: 64px; }
+  .step .when { font-size: 11px; font-weight: 700; margin-top: 8px; padding-top: 8px; border-top: 1px solid #e2e8f0; }
+
+  /* Decision card */
+  .decision { border: 1px solid #fde68a; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 18px; background: #fffbeb; }
+  .decision .dtop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 8px; flex-wrap: wrap; }
+  .decision h3 { font-size: 14.5px; font-weight: 700; color: #0a0e1a; }
+  .decision .desc { font-size: 12.5px; line-height: 1.6; color: #334155; margin: 4px 0 10px; }
+  .decision .qs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .decision .q { padding: 10px 12px; background: #fff; border: 1px solid #fde68a; border-radius: 5px; }
+  .decision .q .qlab { font-size: 10px; font-weight: 800; color: #92400e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .decision .q .qtxt { font-size: 12px; color: #334155; line-height: 1.5; }
+
+  /* Not doing */
+  .notdoing { border: 1px solid #fecaca; border-left: 4px solid #dc2626; border-radius: 6px; padding: 18px; background: #fef2f2; }
+  .notdoing h3 { font-size: 14.5px; font-weight: 700; color: #0a0e1a; margin-bottom: 4px; }
+  .notdoing .sub { font-size: 12.5px; color: #64748b; margin-bottom: 12px; }
+  .ndgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+  .nditem { font-size: 12.5px; color: #334155; padding: 4px 0 4px 22px; position: relative; line-height: 1.5; }
+  .nditem::before { content: "✕"; position: absolute; left: 0; color: #dc2626; font-weight: 800; top: 4px; }
+
+  /* Outside the box */
+  .otbgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .otb { background: linear-gradient(135deg, #0a0e1a 0%, #1a1f33 100%); border-radius: 6px; padding: 14px; color: #fff; position: relative; overflow: hidden; }
+  .otb::before { content: ""; position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: radial-gradient(circle, rgba(255,107,26,0.2), transparent 70%); }
+  .otb h3 { font-size: 13px; font-weight: 700; color: #ff8b4a; margin-bottom: 6px; position: relative; }
+  .otb .desc { font-size: 11.5px; line-height: 1.55; color: #cbd5e1; position: relative; }
+
+  /* Asks */
+  .asks { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; }
+  .asks-row { display: grid; grid-template-columns: 180px 1fr; border-bottom: 1px solid #e2e8f0; font-size: 12.5px; }
+  .asks-row:last-child { border-bottom: none; }
+  .asks-row:nth-child(even) { background: #fff; }
+  .asks-who { padding: 10px 14px; font-weight: 700; color: #0a0e1a; border-right: 1px solid #e2e8f0; background: #fff7f0; }
+  .asks-q { padding: 10px 14px; color: #334155; line-height: 1.55; }
+
+  /* Footer */
+  .footer { background: #0a0e1a; color: #fff; padding: 16px 36px; display: flex; justify-content: space-between; font-size: 12px; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .footer .flow { color: #cbd5e1; }
+  .footer .flow .arrow { color: #ff6b1a; margin: 0 6px; font-weight: 700; }
+  .footer .conf { color: rgba(255,255,255,0.5); }
+
   @media print {
-    body { padding: 0; }
-    .page { max-width: 100%; }
-    .header { border-radius: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .footer { border-radius: 0; }
-    .vision-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { padding: 0; background: #fff; }
+    .page { max-width: 100%; box-shadow: none; border-radius: 0; }
+    .header, .vision, .footer, .otb { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
 </head>
 <body>
 <div class="page">
+
+  <!-- HEADER -->
   <div class="header">
-    <h1>AI & Innovation</h1>
-    <div class="sub">May 2026</div>
+    <h1>Data &amp; <span class="accent">Product AI</span> · 2026</h1>
+    <div class="sub">Execution plan · Joint roadmap from the Data and AI team</div>
+    <div class="meta">
+      Mário Pereira (AI) · Antonio Peixoto (Data)<br>
+      <span class="pill">FOR GILAD &amp; FOUNDERS</span>
+    </div>
   </div>
 
+  <!-- NORTH STAR -->
   <div class="northstar">
-    <strong>North Star: </strong>Build the AI capabilities that drive operational excellence today and turn partner-facing AI into Bloq.it's strategic moat tomorrow — a productized, monetizable layer across the back office, client delivery, and the smart locker itself.
+    <strong>North Star:</strong> <em>Data creates trust. AI creates leverage. Product turns both into repeatable value.</em><br>
+    Internal velocity first. Partner-facing AI only on certified data. A 12-month plan with quarterly proof points, not a vision essay.
   </div>
 
   <div class="body">
 
-    <!-- 1. STRATEGIC PROGRESS -->
+    <!-- 1. STRATEGIC TRACKS -->
     <section>
-      <div class="vision-section">
-        <h2>Strategic Progress — AI & Innovation Vision</h2>
-        <div class="vision-grid">
-          <div class="vision-card">
+      <div class="vision">
+        <h2>🎯 Four Strategic Tracks · One Operating Layer</h2>
+        <div class="vsub">Every initiative below maps to one of these. No work in isolation.</div>
+        <div class="vgrid">
+
+          <div class="vcard accent">
+            <div class="vlabel">⚡ Internal AI</div>
             <div class="donut-wrap">
-              <svg width="80" height="80" viewBox="0 0 80 80">
-                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
-                <circle cx="40" cy="40" r="34" fill="none" stroke="#3b82f6" stroke-width="8" stroke-dasharray="213.6" stroke-dashoffset="160.2" stroke-linecap="round"/>
+              <svg width="64" height="64" viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="7"/>
+                <circle cx="32" cy="32" r="26" fill="none" stroke="#ff6b1a" stroke-width="7" stroke-dasharray="163.4" stroke-dashoffset="118.5" stroke-linecap="round"/>
               </svg>
-              <div class="donut-pct">25%</div>
+              <div class="donut-pct">28%</div>
             </div>
-            <h3>Operational AI<br><span style="font-weight:400;font-size:12px;color:#94a3b8">Internal Velocity & Quick Wins</span></h3>
+            <h3>Leverage</h3>
             <div class="v-items">
-              <div class="v-item">EVRI status dashboard launched — feedback iteration in flight</div>
-              <div class="v-item">Battery WO pattern recognition — short-term tool in scoping</div>
-              <div class="v-item">Vibe-code tooling for ops — strategic ideation with Soares</div>
+              <div class="v-item">EVRI knowledge layer live</div>
+              <div class="v-item">ILUS ticket scoring in scope</div>
+              <div class="v-item">Datadog incident copilot next</div>
             </div>
           </div>
-          <div class="vision-card">
+
+          <div class="vcard">
+            <div class="vlabel">🌐 External AI</div>
             <div class="donut-wrap">
-              <svg width="80" height="80" viewBox="0 0 80 80">
-                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
-                <circle cx="40" cy="40" r="34" fill="none" stroke="#8b5cf6" stroke-width="8" stroke-dasharray="213.6" stroke-dashoffset="202.92" stroke-linecap="round"/>
+              <svg width="64" height="64" viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="7"/>
+                <circle cx="32" cy="32" r="26" fill="none" stroke="#3b82f6" stroke-width="7" stroke-dasharray="163.4" stroke-dashoffset="155.2" stroke-linecap="round"/>
               </svg>
               <div class="donut-pct">5%</div>
             </div>
-            <h3>Partner-Facing AI Products<br><span style="font-weight:400;font-size:12px;color:#94a3b8">Bloq.it AI for Clients</span></h3>
+            <h3>Product</h3>
             <div class="v-items">
-              <div class="v-item">Back office chatbot — discovery scoping</div>
-              <div class="v-item">Per-client status dashboards — mimic EVRI for GLS (Diana)</div>
-              <div class="v-item">Smart Intelligent Locker (IoT + AI) — vision pairing with Antonio</div>
-              <div class="v-item">Persona-based AI (Marta Leão: 16–18 personas → 5–6 groups)</div>
+              <div class="v-item">Prompt Dashboard scoping</div>
+              <div class="v-item">Partner reports auto-generated</div>
+              <div class="v-item">Network intelligence pilot</div>
             </div>
           </div>
-          <div class="vision-card">
+
+          <div class="vcard">
+            <div class="vlabel">🏛 Data Foundation</div>
             <div class="donut-wrap">
-              <svg width="80" height="80" viewBox="0 0 80 80">
-                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
-                <circle cx="40" cy="40" r="34" fill="none" stroke="#06b6d4" stroke-width="8" stroke-dasharray="213.6" stroke-dashoffset="192.24" stroke-linecap="round"/>
+              <svg width="64" height="64" viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="7"/>
+                <circle cx="32" cy="32" r="26" fill="none" stroke="#06b6d4" stroke-width="7" stroke-dasharray="163.4" stroke-dashoffset="138.9" stroke-linecap="round"/>
+              </svg>
+              <div class="donut-pct">15%</div>
+            </div>
+            <h3>Trust</h3>
+            <div class="v-items">
+              <div class="v-item">Lakehouse architecture defined</div>
+              <div class="v-item">20 certified metrics in scope</div>
+              <div class="v-item">Semantic layer Q2</div>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="vlabel">🧪 Creator Lab</div>
+            <div class="donut-wrap">
+              <svg width="64" height="64" viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="7"/>
+                <circle cx="32" cy="32" r="26" fill="none" stroke="#a78bfa" stroke-width="7" stroke-dasharray="163.4" stroke-dashoffset="147" stroke-linecap="round"/>
               </svg>
               <div class="donut-pct">10%</div>
             </div>
-            <h3>AI Strategy & Moat<br><span style="font-weight:400;font-size:12px;color:#94a3b8">Vision, Storytelling, Business Case</span></h3>
+            <h3>Governance</h3>
             <div class="v-items">
-              <div class="v-item">Role pivot to strategic AI product — aligned May 4</div>
-              <div class="v-item">AI Vision 1–2 pager for partners — drafting</div>
-              <div class="v-item">Market & competitor research (SaaS pivots: Salesforce, Monday, Wix)</div>
+              <div class="v-item">Phase 1 manual hosting (Renato)</div>
+              <div class="v-item">Intake + kill criteria needed</div>
+              <div class="v-item">Phase 2 platform Q3</div>
             </div>
           </div>
+
         </div>
-        <div class="vision-footer">Every current initiative directly advances one or more pillars. No work is happening in isolation.</div>
+        <div class="vfooter">Trust → Leverage → Product → Moat. Each layer feeds the next.</div>
       </div>
     </section>
 
-    <!-- 2. STRATEGIC DECISION -->
+    <!-- 2. QUARTERLY ROADMAP -->
     <section>
       <div class="section-head">
-        <div class="dot" style="background:#f59e0b"></div>
-        <h2>Strategic Decision in Progress</h2>
+        <div class="dot" style="background:#ff6b1a"></div>
+        <h2>📅 Quarterly Roadmap · 2026</h2>
+        <div class="end">12-month commitment plan</div>
       </div>
-      <div class="decision-card">
-        <div class="top">
-          <h3>Bloq.it AI as a Productized Partner Offering</h3>
-          <span class="badge badge-decision">Under Evaluation</span>
+      <div class="gantt">
+        <div class="gantt-head">
+          <div>Initiative</div>
+          <div>Q1 2026 · Foundations</div>
+          <div>Q2 · Internal Wins</div>
+          <div>Q3 · Partner Beta</div>
+          <div>Q4 · Scale &amp; Package</div>
         </div>
-        <div class="desc">Defining whether AI features (back office chatbot, AI dashboards, intelligent locker insights) are bundled into existing contracts or sold as a separate paid tier — a "Bloq.it AI" / "Bloq.it Plus" SKU. The decision shapes the product roadmap, pricing model, and how AI shows up in client conversations from H2 onward.</div>
-        <div class="outcome-grid">
-          <div class="outcome-item">
-            <div class="oi-label">What it guarantees</div>
-            <div class="oi-text">A coherent answer to "what does AI mean for Bloq.it users?" — one strategy, one vision, one storytelling line shared with Jorge, Soares, and Francisco. No more ad-hoc AI features tacked onto requests.</div>
-          </div>
-          <div class="outcome-item">
-            <div class="oi-label">What it enables</div>
-            <div class="oi-text">A defensible moat against legacy competitors who can't move fast on AI. Recurring revenue lift via a paid AI tier (lessons from prior perpetual → subscription pivots). Clearer prioritization of which AI bets to fund first.</div>
-          </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">EVRI Knowledge Layer</div>
+          <div class="gantt-cell"><div class="bar bar-now">🟠 Live now</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Generalize → ops + CS</div></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"></div>
         </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">ILUS (ticket urgency)</div>
+          <div class="gantt-cell"><div class="bar bar-now">🟠 In build</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Production rollout</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Feeds TIS (Carmen)</div></div>
+          <div class="gantt-cell"></div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">20 Certified Metrics</div>
+          <div class="gantt-cell"><div class="bar bar-active">Define + 5 shipped</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">10 metrics live</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">15 + semantic layer</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">20 certified ✓</div></div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">Datadog Incident Copilot</div>
+          <div class="gantt-cell"><div class="bar bar-disc">Discovery</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Internal beta</div></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"></div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">Sales / Account Copilot</div>
+          <div class="gantt-cell"><div class="bar bar-disc">Scoping w/ Commercial</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">v1 (CRM + Fathom)</div></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"></div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">Backoffice NL Assistant</div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-active">Read-only alpha</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Beta to all ops</div></div>
+          <div class="gantt-cell"></div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">Ops Copilot v1</div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-active">Unified incident view</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Recommendations layer</div></div>
+          <div class="gantt-cell"></div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">Predictive Maintenance v1</div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-disc">Pilot · NEXT fleet</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">SLA risk engine</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Auto-dispatch (1 case)</div></div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">Partner Prompt Dashboard</div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-disc">Build-vs-buy decision</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">EVRI beta · 5 metrics</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">2nd partner</div></div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">Demand / Capacity Forecast</div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-active">1 carrier-region pair</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Multi-region</div></div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">Technician Recommender</div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-active">Field rollout</div></div>
+          <div class="gantt-cell"></div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">Network Intelligence Pilot</div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-watch">Data rights review</div></div>
+          <div class="gantt-cell"><div class="bar bar-disc">Cross-carrier pilot</div></div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">Partner Intelligence Pack</div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-planned">Monetization signal</div></div>
+        </div>
+
+        <div class="gantt-row">
+          <div class="gantt-name">Creator Lab Governance</div>
+          <div class="gantt-cell"><div class="bar bar-disc">Intake + kill criteria</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">v1 hosting 3-5 tools</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">v2 self-service</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Graduation model</div></div>
+        </div>
+
       </div>
     </section>
 
-    <!-- 3. WHAT'S NEXT -->
+    <!-- 3. IN PROGRESS NOW -->
     <section>
       <div class="section-head">
-        <div class="dot" style="background:#6366f1"></div>
-        <h2>What's Next</h2>
+        <div class="dot" style="background:#ff6b1a"></div>
+        <h2>🟠 In Progress Right Now</h2>
+        <div class="end">Live work · already producing signal</div>
       </div>
-      <div class="nnl-box">
-        <div style="display:grid;grid-template-columns:1fr 1fr">
-          <div class="nnl-col" style="background:#eff6ff">
-            <div class="nnl-head"><div class="nnl-dot" style="background:#3b82f6"></div> Next</div>
-            <div class="nnl-item">Update EVRI status dashboard with Lopes feedback</div>
-            <div class="nnl-item">Mimic EVRI for GLS (Diana) — first client-delivery replication</div>
-            <div class="nnl-item">Product Status Dashboard template across all product teams (with Taila)</div>
-            <div class="nnl-item">AI Vision 1–2 pager for partners (defining Bloq.it AI)</div>
-            <div class="nnl-item">Battery Working Order pattern recognition (with Soares & Antonio)</div>
-            <div class="nnl-item">Strategic ops quick-wins meeting (Soares + Mário, optionally Rodulfo)</div>
-            <div class="nnl-item">Enterprise LLM / product design MD files (waiting on Marta)</div>
+      <div class="ipgrid">
+        <div class="ipcard">
+          <div class="iptop">
+            <h3>EVRI Knowledge Center</h3>
+            <span class="badge badge-now">Live</span>
           </div>
-          <div class="nnl-col" style="background:#faf5ff;border-right:none">
-            <div class="nnl-head"><div class="nnl-dot" style="background:#8b5cf6"></div> Later</div>
-            <div class="nnl-item">Bloq.it back office chatbot — productized AI assistant</div>
-            <div class="nnl-item">AI dashboard builder for clients (natural-language → dashboard)</div>
-            <div class="nnl-item">Smart Intelligent Locker (IoT + AI, paired with Data team)</div>
-            <div class="nnl-item">Bloq.it AI / "Bloq.it Plus" pricing tier & business case</div>
-            <div class="nnl-item">Persona-based AI bundles (5–6 user groups)</div>
-            <div class="nnl-item">AI agent for technicians (replacing the Rovo workaround)</div>
-            <div class="nnl-item">Per-client dashboards rolled out (InPost, DHL, Vinted, DeinFach)</div>
-            <div class="nnl-item">Vibe-code "App Store" / creator tools for Bloq.it (Marta's sketch)</div>
+          <div class="meta"><strong>Mário</strong> · Confluence + Slack RAG via Claude Project</div>
+          <div class="desc">Demo call this week with EVRI CDU team. Queries covering webhooks, driver auth, courier flow, barcode validation. Pattern replicable across all partner accounts.</div>
+          <span class="tag">✓ Replication path identified</span>
+        </div>
+        <div class="ipcard">
+          <div class="iptop">
+            <h3>ILUS Ticket Scoring</h3>
+            <span class="badge badge-now">In build</span>
           </div>
+          <div class="meta"><strong>Mário + João Soares + Carmen</strong> · Streamlit + scoring formula</div>
+          <div class="desc">Replacing the near-useless Freshservice priority field with a deterministic urgency score. Feeds into Carmen's broader TIS initiative. Q1 production target.</div>
+          <span class="tag">✓ Full spec ready in Claude Code</span>
+        </div>
+        <div class="ipcard">
+          <div class="iptop">
+            <h3>Sales Margin Calculator</h3>
+            <span class="badge badge-ip">Pre-launch</span>
+          </div>
+          <div class="meta"><strong>Erwan + Mário</strong> · React + Supabase + Cloudflare Access</div>
+          <div class="desc">Internal pricing tool. Held for IT consultation review (shadow IT, GDPR, data security gates) before going live with real pricing data.</div>
+          <span class="tag">⚠ Awaiting IT sign-off</span>
         </div>
       </div>
     </section>
 
-    <!-- 4. GANTT — DELIVERING BUSINESS VALUE -->
+    <!-- 4. TOP 5 YEAR-1 BETS -->
     <section>
       <div class="section-head">
         <div class="dot" style="background:#16a34a"></div>
-        <h2>Delivering Business Value Now</h2>
+        <h2>🎲 Top 5 Year-1 Bets</h2>
+        <div class="end">Where we will spend most of our chips</div>
       </div>
-      <div style="border:1px solid #e2e8f0;border-radius:6px;overflow:hidden">
-        <!-- Header -->
-        <div style="display:grid;grid-template-columns:200px 1fr 1fr 1fr;border-bottom:1px solid #e2e8f0">
-          <div style="padding:10px 14px;font-size:13px;font-weight:600;color:#64748b;background:#f8fafc;border-right:1px solid #e2e8f0">Initiative</div>
-          <div style="padding:10px 14px;font-size:13px;font-weight:600;color:#64748b;background:#f8fafc;border-right:1px solid #e2e8f0;text-align:center">Q2 2026</div>
-          <div style="padding:10px 14px;font-size:13px;font-weight:600;color:#64748b;background:#f8fafc;border-right:1px solid #e2e8f0;text-align:center">Q3 2026</div>
-          <div style="padding:10px 14px;font-size:13px;font-weight:600;color:#64748b;background:#f8fafc;text-align:center">Q4 2026</div>
+      <div class="bets">
+        <div class="bet">
+          <span class="num">01</span>
+          <h3>Certified metrics + semantic layer</h3>
+          <div class="who">Antonio · Foundation</div>
+          <div class="kpi">20 metrics, single source of truth, AI-queryable.</div>
         </div>
-        <!-- EVRI Status Dashboard -->
-        <div class="gantt-row">
-          <div class="gantt-name">EVRI Status Dashboard</div>
-          <div class="gantt-cell"><div class="gantt-bar" style="background:#16a34a;color:#fff;width:40%;min-width:90px">Launched ✓</div></div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell" style="border-right:none"></div>
+        <div class="bet">
+          <span class="num">02</span>
+          <h3>AI Knowledge Layer (all internal)</h3>
+          <div class="who">Mário · Internal</div>
+          <div class="kpi">EVRI pattern → every team, every partner account.</div>
         </div>
-        <!-- Lopes Feedback Iteration — full year 2026 -->
-        <div style="display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #f1f5f9;align-items:center">
-          <div class="gantt-name">Lopes Feedback Iteration</div>
-          <div style="padding:12px 14px"><div class="gantt-bar" style="background:#dbeafe;color:#1e40af;width:100%">Ongoing — monthly cadence across 2026</div></div>
+        <div class="bet">
+          <span class="num">03</span>
+          <h3>Ops + Ticket + Incident copilot</h3>
+          <div class="who">Mário + Ops · Internal</div>
+          <div class="kpi">Measurable MTTR and triage time reduction.</div>
         </div>
-        <!-- GLS Status Dashboard — mid Q2 to beginning Q3 -->
-        <div class="gantt-row">
-          <div class="gantt-name">GLS Dashboard (mimic EVRI)</div>
-          <div style="padding:12px 14px;grid-column:2/4;border-right:1px solid #e2e8f0">
-            <div class="gantt-bar" style="background:#dbeafe;color:#1e40af;margin-left:25%;width:35%">Starting</div>
-          </div>
-          <div class="gantt-cell" style="border-right:none"></div>
+        <div class="bet">
+          <span class="num">04</span>
+          <h3>Partner Prompt Dashboard (certified data only)</h3>
+          <div class="who">Joint · External</div>
+          <div class="kpi">EVRI beta Q3. Read-only. Bought engine, custom skin.</div>
         </div>
-        <!-- Product Status Dashboard Template — Q2 to Q3 -->
-        <div class="gantt-row">
-          <div class="gantt-name">Product Status Template</div>
-          <div class="gantt-cell"><div class="gantt-bar" style="background:#dbeafe;color:#1e40af;width:100%">In Progress (Taila)</div></div>
-          <div class="gantt-cell"><div class="gantt-bar" style="background:#dbeafe;color:#1e40af;width:60%">Rollout</div></div>
-          <div class="gantt-cell" style="border-right:none"></div>
-        </div>
-        <!-- AI Vision 1-2 pager — Q2 -->
-        <div class="gantt-row">
-          <div class="gantt-name">AI Vision 1–2 Pager</div>
-          <div class="gantt-cell"><div class="gantt-bar" style="background:#dbeafe;color:#1e40af;width:80%">Drafting</div></div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell" style="border-right:none"></div>
-        </div>
-        <!-- Battery WO Pattern Recognition — Q2 to Q3 -->
-        <div style="display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #f1f5f9;align-items:center;background:#f8fafc">
-          <div class="gantt-name">Battery WO Pattern Recognition</div>
-          <div style="padding:12px 14px">
-            <table style="width:100%;border:none;border-collapse:collapse"><tr>
-              <td style="width:25%;border:none;padding:0"></td>
-              <td style="border:none;padding:0"><div class="gantt-bar" style="background:#e0e7ff;color:#4338ca">Discovery — Soares & Antonio</div></td>
-            </tr></table>
-          </div>
-        </div>
-        <!-- Back Office Chatbot — Q3 discovery -->
-        <div style="display:grid;grid-template-columns:200px 1fr 2fr;border-bottom:1px solid #f1f5f9;align-items:center">
-          <div class="gantt-name">Back Office Chatbot</div>
-          <div class="gantt-cell"></div>
-          <div style="padding:12px 14px"><div class="gantt-bar" style="background:#e0e7ff;color:#4338ca">Discovery</div></div>
-        </div>
-        <!-- Bloq.it AI Pricing & Business Case — Q3/Q4 -->
-        <div class="gantt-row" style="background:#f8fafc">
-          <div class="gantt-name">Bloq.it AI Business Case</div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"><div class="gantt-bar" style="background:#e5e7eb;color:#374151">Planned</div></div>
-          <div style="padding:12px 14px;border-right:none"><div class="gantt-bar" style="background:#e5e7eb;color:#374151">Pricing & Pilot</div></div>
-        </div>
-        <!-- Smart Intelligent Locker — Q4 discovery -->
-        <div class="gantt-row">
-          <div class="gantt-name">Smart Intelligent Locker</div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"></div>
-          <div style="padding:12px 14px;border-right:none"><div class="gantt-bar" style="background:#e0e7ff;color:#4338ca">Discovery (w/ Hardware)</div></div>
-        </div>
-        <!-- Enterprise LLM / MD Files — On Hold -->
-        <div style="display:grid;grid-template-columns:200px 1fr;align-items:center;background:#f8fafc">
-          <div style="padding:12px 14px;font-size:13px;font-weight:600;color:#991b1b;border-right:1px solid #e2e8f0">Enterprise LLM / MD Files</div>
-          <div style="padding:12px 14px">
-            <div style="border:2px dashed #ef4444;color:#991b1b;border-radius:4px;padding:6px 10px;font-size:11px;font-weight:600;background:rgba(254,226,226,0.3);text-align:center">⏸ Waiting on Marta — product design MD files outstanding · Resumes once delivered</div>
-          </div>
+        <div class="bet">
+          <span class="num">05</span>
+          <h3>Predictive + SLA risk pilots</h3>
+          <div class="who">Joint · External</div>
+          <div class="kpi">Moves Ops from reactive to proactive on real data.</div>
         </div>
       </div>
     </section>
 
-    <!-- 5. BUILDING THE PLATFORM FOUNDATION -->
+    <!-- 5. AI MATURITY LADDER -->
     <section>
       <div class="section-head">
         <div class="dot" style="background:#3b82f6"></div>
-        <h2>Building the Platform Foundation</h2>
+        <h2>🪜 AI Maturity Ladder · Anchor Founder Expectations</h2>
+        <div class="end">Where we will be, level by level</div>
       </div>
-      <div class="grid-3">
-        <div class="found-card">
-          <div class="top">
-            <h3>AI Status & Roadmap Discipline</h3>
-            <span class="badge badge-ip">In Progress</span>
-          </div>
-          <div class="info">
-            <div><strong>AI/Product Lead</strong> · Monthly cadence</div>
-            <div class="desc">Monthly one-pager (this artifact) shared proactively with Lopes. Replaces reactive problem-driven syncs with a visible, prioritized AI agenda.</div>
-            <span class="linked">🔗 Same template as Data team — single readable format for stakeholders</span>
-          </div>
+      <div class="ladder">
+        <div class="step now">
+          <div class="lvl">L1 · NOW</div>
+          <h4>Search</h4>
+          <div class="desc">Finds answers across Drive, Slack, Confluence, Backoffice</div>
+          <div class="when" style="color:#c2410c">Q1 · Q2</div>
         </div>
-        <div class="found-card">
-          <div class="top">
-            <h3>Vibe-Code Tooling Layer</h3>
-            <span class="badge badge-ip">In Progress</span>
-          </div>
-          <div class="info">
-            <div><strong>AI/Product Lead + Ops</strong> · Q2 / Q3 2026</div>
-            <div class="desc">A reusable scaffold for low-code internal tools that extract existing data, automate analytics, and push results into the InPost ticketing system. The EVRI dashboard is the first instance.</div>
-            <div style="margin-top:6px;padding:4px 8px;background:#f0fdf4;border-radius:3px;color:#166534;font-size:11px;font-weight:600">✓ EVRI pattern proven — replication path identified</div>
-          </div>
+        <div class="step now">
+          <div class="lvl">L2 · NOW</div>
+          <h4>Explain</h4>
+          <div class="desc">Summarizes incidents, parcels, lockers, routes, tickets</div>
+          <div class="when" style="color:#c2410c">Q1 · Q2</div>
         </div>
-        <div class="found-card">
-          <div class="top">
-            <h3>AI Strategy & Mentorship Loop</h3>
-            <span class="badge badge-planned">Planned</span>
-          </div>
-          <div class="info">
-            <div><strong>AI/Product Lead w/ Gilad</strong> · Q2 / Q3 2026</div>
-            <div class="desc">Structured mentorship to shift from AI engineering to strategic AI product. Deep market & competitor research (perplexity / NotebookLM / Gemini), connected to Jorge, Soares, Francisco for product vision integration.</div>
-          </div>
+        <div class="step soon">
+          <div class="lvl">L3 · Q2-Q3</div>
+          <h4>Recommend</h4>
+          <div class="desc">Suggests fixes, dispatch, routing, customer responses</div>
+          <div class="when" style="color:#1e40af">Q2 · Q3</div>
+        </div>
+        <div class="step soon">
+          <div class="lvl">L4 · Q3</div>
+          <h4>Draft</h4>
+          <div class="desc">Creates tickets, reports, partner updates, SQL, runbooks</div>
+          <div class="when" style="color:#1e40af">Q3</div>
+        </div>
+        <div class="step later">
+          <div class="lvl">L5 · Q4</div>
+          <h4>Execute (approved)</h4>
+          <div class="desc">Performs actions only after human confirmation</div>
+          <div class="when" style="color:#6b21a8">Q4 · 2027</div>
+        </div>
+        <div class="step future">
+          <div class="lvl">L6 · 2027+</div>
+          <h4>Autonomous</h4>
+          <div class="desc">Limited closed-loop automation for low-risk cases only</div>
+          <div class="when" style="color:#64748b">2027+</div>
         </div>
       </div>
+      <div style="margin-top:10px;font-size:12px;color:#dc2626;text-align:center"><strong>⛔ Hard line:</strong> no "autonomous self-healing fleet" promises in 2026.</div>
     </section>
 
-    <!-- 6. CURRENT TEAM -->
-    <section>
-      <div class="section-head">
-        <div class="dot" style="background:#64748b"></div>
-        <h2>Current Team (1 person · hiring case in progress)</h2>
-      </div>
-      <div class="grid-3">
-        <div class="person">
-          <div class="avatar" style="background:#8b5cf6">MP</div>
-          <div class="role">Mário Pereira</div>
-          <div class="focus">AI/Product Lead · Pivoting from AI engineering to strategy, vision & storytelling</div>
-        </div>
-        <div class="person" style="border-style:dashed;background:#fff">
-          <div class="avatar" style="background:#94a3b8">+</div>
-          <div class="role">LLM Engineer (Hiring Case)</div>
-          <div class="focus">Back office chatbot & enterprise LLM — to unlock paid AI features</div>
-        </div>
-        <div class="person" style="border-style:dashed;background:#fff">
-          <div class="avatar" style="background:#94a3b8">+</div>
-          <div class="role">LLM Engineer (Hiring Case)</div>
-          <div class="focus">Operational AI tools & agent infrastructure on Bloq.it data</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. WHAT THE BUSINESS IS ASKING FOR -->
+    <!-- 6. DECISIONS PENDING -->
     <section>
       <div class="section-head">
         <div class="dot" style="background:#f59e0b"></div>
-        <h2>What the Business Is Asking For</h2>
+        <h2>⚠️ Decisions Pending · Need Gilad / Founders</h2>
+        <div class="end">Blockers for our roadmap commitment</div>
       </div>
-      <div class="demand-box">
-        <div class="demand-header">
-          <div>Requestor</div>
-          <div>Needs</div>
+      <div class="decision">
+        <div class="dtop">
+          <h3>Three decisions we need this month</h3>
+          <span class="badge badge-decision">Action Required</span>
         </div>
-        <div class="demand-row">
-          <div class="demand-team">Operations (Soares)</div>
-          <div class="demand-needs">Pattern recognition for false battery WOs · Aggregation of working orders to firmware versions · Low-code visibility apps · Automation that pushes into the InPost ticketing system</div>
+        <div class="desc">Each shapes a different part of the 2026 roadmap. Without these answers we either over-commit, under-commit, or stall on legal review.</div>
+        <div class="qs">
+          <div class="q">
+            <div class="qlab">🔨 Build vs Buy</div>
+            <div class="qtxt"><strong>Prompt Dashboard engine.</strong> Snowflake Cortex, Hex Magic, Looker, ThoughtSpot all ship this now. Recommendation: buy the engine, own the semantic layer + partner skin. Need a position.</div>
+          </div>
+          <div class="q">
+            <div class="qlab">⚖️ Data Rights</div>
+            <div class="qtxt"><strong>Neutral Host legal framework.</strong> Cross-carrier intelligence depends on data-sharing consent. GDPR + EU competition law are non-trivial. Need legal sign-off before Q3 pilot scoping.</div>
+          </div>
+          <div class="q">
+            <div class="qlab">🎯 Q1 Wedge for Lopes</div>
+            <div class="qtxt"><strong>Name the deliverable.</strong> Lopes wants short-term value. Tell us what concrete artifact would satisfy him in 90 days and we will build the roadmap backward from it.</div>
+          </div>
+          <div class="q">
+            <div class="qlab">🧑‍💼 Risk Appetite</div>
+            <div class="qtxt"><strong>How autonomous is acceptable?</strong> Read-only / draft / approve-to-execute / autonomous. Determines L5 timing and what we can promise partners.</div>
+          </div>
         </div>
-        <div class="demand-row">
-          <div class="demand-team">Lopes</div>
-          <div class="demand-needs">Proactive monthly AI status visibility · Prioritized list of AI quick wins · Clear AI roadmap so syncs aren't only reactive to incidents</div>
+      </div>
+    </section>
+
+    <!-- 7. WHAT WE WILL NOT DO -->
+    <section>
+      <div class="section-head">
+        <div class="dot" style="background:#dc2626"></div>
+        <h2>🚫 What We Will NOT Commit to in 2026</h2>
+        <div class="end">Defending the negative wins respect</div>
+      </div>
+      <div class="notdoing">
+        <h3>Out of scope for 2026 · directionally possible later</h3>
+        <div class="sub">If founders push for these, we will reframe rather than commit.</div>
+        <div class="ndgrid">
+          <div class="nditem">Fully autonomous self-healing fleets</div>
+          <div class="nditem">Real-time cross-carrier routing across all partners</div>
+          <div class="nditem">A mature data monetization business</div>
+          <div class="nditem">A non-technical "anyone deploys" Creator Lab</div>
+          <div class="nditem">AI replacing Looker / Backoffice wholesale</div>
+          <div class="nditem">Predictive maintenance without labeled failure data</div>
+          <div class="nditem">External AI exposed against uncertified data</div>
+          <div class="nditem">Custom-built text-to-SQL engine from scratch</div>
         </div>
-        <div class="demand-row">
-          <div class="demand-team">Client Delivery</div>
-          <div class="demand-needs">Per-client status dashboards (Diana — GLS · Hugo Barbosa — InPost · Daniela — workshop follow-ups) · Replicable artifact mimicking the EVRI solution</div>
+      </div>
+    </section>
+
+    <!-- 8. OUTSIDE THE BOX -->
+    <section>
+      <div class="section-head">
+        <div class="dot" style="background:#a78bfa"></div>
+        <h2>💡 Outside-the-Box Plays</h2>
+        <div class="end">Differentiate vs. any LLM-on-dashboards story</div>
+      </div>
+      <div class="otbgrid">
+        <div class="otb">
+          <h3>📡 Locker-as-Sensor</h3>
+          <div class="desc">Thousands of fixed instrumented endpoints = a privately-held urban sensor network. Anonymized foot traffic, parcel volume, weather correlation. Sellable to retailers, urban planners, insurers. No competitor has the footprint.</div>
         </div>
-        <div class="demand-row">
-          <div class="demand-team">Back Office Users</div>
-          <div class="demand-needs">Conversational AI for instant data retrieval (e.g. "how many lockers are on P0 network failure?") · Replace 3-minute query waits with chatbot interactions</div>
+        <div class="otb">
+          <h3>📊 Carrier Benchmarking</h3>
+          <div class="desc">"Your first-attempt rate is bottom quartile vs EU postal companies your size." Carriers will pay for it. Lower technical bar than cross-carrier routing. Monetizable in 2026.</div>
         </div>
-        <div class="demand-row">
-          <div class="demand-team">Product Team (Taila)</div>
-          <div class="demand-needs">Structured product status dashboard template — status, OKRs, top Jira issues, key metrics — fillable by every PM, kept current</div>
+        <div class="otb">
+          <h3>🤝 Founders' Co-pilot</h3>
+          <div class="desc">Founders want answers, not dashboards. Make founders the first internal customer of DataBloq's external interface. Forces the semantic layer to be production-grade, fast.</div>
         </div>
-        <div class="demand-row">
-          <div class="demand-team">Hardware Team</div>
-          <div class="demand-needs">IoT-driven Smart Intelligent Locker concept · Data + AI layer paired with Antonio's hardware data work</div>
+        <div class="otb">
+          <h3>🗑 Kill the Dashboard</h3>
+          <div class="desc">Audit dashboard usage logs. Retire 50% of low-usage dashboards in favor of NL queries against the same semantic layer. Gives Prompt Dashboard a captive internal audience before external.</div>
         </div>
-        <div class="demand-row">
-          <div class="demand-team">Executive (Jorge, Soares, Francisco)</div>
-          <div class="demand-needs">AI vision & moat positioning · Business case for Bloq.it AI as a paid tier · Competitive analysis vs. legacy SaaS pivots (Salesforce, Monday, Wix, Fiverr) · Storytelling for partner conversations</div>
+        <div class="otb">
+          <h3>🎭 Synthetic Scenario Factory</h3>
+          <div class="desc">Vandalism, fraud, tampering, failed handovers are rare and hard to label. Generative pipeline produces plausible scenarios for training detection models. Defensible capability.</div>
+        </div>
+        <div class="otb">
+          <h3>🧬 Locker Digital Twins</h3>
+          <div class="desc">Per-asset failure-mode prediction trained on each unit's sensor history. Uniquely possible because Bloq.it owns the hardware. No software-only competitor can build this.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. WHAT WE NEED FROM FOUNDERS -->
+    <section>
+      <div class="section-head">
+        <div class="dot" style="background:#0a0e1a"></div>
+        <h2>🎤 What We Need · By Audience</h2>
+        <div class="end">The asks behind this plan</div>
+      </div>
+      <div class="asks">
+        <div class="asks-row">
+          <div class="asks-who">Gilad</div>
+          <div class="asks-q">Confirm the 3 top business outcomes for 2026 · Pick the lighthouse partner (EVRI is the natural answer) · Name the Q1 deliverable that satisfies Lopes · Approve the build-vs-buy direction on Prompt Dashboard · Confirm AI risk appetite (read-only → autonomous)</div>
+        </div>
+        <div class="asks-row">
+          <div class="asks-who">Founders</div>
+          <div class="asks-q">Sign-off on the "not in 2026" list · Approve the kill criteria for Creator Lab · Greenlight legal scope on cross-carrier data rights · Headcount + infra budget commitment</div>
+        </div>
+        <div class="asks-row">
+          <div class="asks-who">Antonio &amp; Mário</div>
+          <div class="asks-q">Joint internal friction map (counterpart to Erwan's external tree) · Two concrete Q1 commitments (one per side) · One-page roadmap to replace the 20-page vision · Monthly cadence on this artifact</div>
+        </div>
+        <div class="asks-row">
+          <div class="asks-who">Platform (Renato)</div>
+          <div class="asks-q">Define the seam · Who owns model deployment infra, evals, observability, semantic layer · Whether we are users of Lab v1/v2 or run our own track</div>
         </div>
       </div>
     </section>
 
   </div>
 
+  <!-- FOOTER -->
   <div class="footer">
-    <span>Bloq.it AI & Innovation · Confidential</span>
-    <span>Internal velocity → Partner-facing AI → Productized moat → Monetization</span>
+    <span class="flow">Trust <span class="arrow">›</span> Internal Velocity <span class="arrow">›</span> Partner-facing AI <span class="arrow">›</span> Productized Moat <span class="arrow">›</span> Monetization</span>
+    <span class="conf">Bloq.it · Data &amp; Product AI 2026 · Internal</span>
   </div>
+
 </div>
 </body>
 </html>
