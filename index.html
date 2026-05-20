@@ -3,46 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bloq.it · Data & Product AI 2026</title>
+<title>Bloq.it · Data & AI Investment Plan 2026-2027</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #0f172a; background: #f1f5f9; display: flex; justify-content: center; padding: 24px; }
   .page { max-width: 1040px; width: 100%; box-shadow: 0 4px 24px rgba(15,23,42,0.06); border-radius: 10px; overflow: hidden; background: #fff; }
-
-  /* Header */
+ 
   .header { background: linear-gradient(135deg, #0a0e1a 0%, #1a1f33 100%); color: #fff; padding: 28px 36px; position: relative; overflow: hidden; }
-  .header::before { content: ""; position: absolute; top: 0; right: 0; width: 220px; height: 100%; background: linear-gradient(135deg, transparent 30%, rgba(255,107,26,0.12) 100%); }
+  .header::before { content: ""; position: absolute; top: 0; right: 0; width: 260px; height: 100%; background: linear-gradient(135deg, transparent 30%, rgba(255,107,26,0.12) 100%); }
   .header h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; position: relative; }
   .header h1 .accent { color: #ff6b1a; }
   .header .sub { font-size: 14px; opacity: 0.7; margin-top: 4px; position: relative; }
   .header .meta { position: absolute; top: 28px; right: 36px; font-size: 12px; color: rgba(255,255,255,0.6); text-align: right; }
   .header .meta .pill { display: inline-block; background: rgba(255,107,26,0.18); color: #ff8b4a; padding: 4px 10px; border-radius: 999px; font-weight: 600; font-size: 11px; margin-top: 6px; border: 1px solid rgba(255,107,26,0.3); }
-
-  /* North star */
+  .horizon { display: inline-block; background: rgba(255,255,255,0.08); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-top: 10px; border-left: 3px solid #ff6b1a; }
+ 
   .northstar { background: #fff7f0; border-bottom: 1px solid #ffe4d1; padding: 16px 36px; font-size: 14px; line-height: 1.55; color: #1f2937; border-left: 4px solid #ff6b1a; }
   .northstar strong { color: #0a0e1a; font-weight: 700; }
   .northstar em { font-style: normal; color: #ff6b1a; font-weight: 600; }
-
+ 
   .body { padding: 32px 36px; }
   section { margin-bottom: 36px; }
-
+ 
   .section-head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; position: relative; }
   .section-head::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #e2e8f0; z-index: 0; }
   .section-head h2 { font-size: 17px; font-weight: 800; background: #fff; padding-right: 12px; position: relative; z-index: 1; color: #0a0e1a; letter-spacing: -0.2px; }
   .section-head .dot { width: 10px; height: 10px; border-radius: 50%; position: relative; z-index: 1; box-shadow: 0 0 0 6px #fff; }
   .section-head .end { margin-left: auto; background: #fff; padding-left: 12px; position: relative; z-index: 1; font-size: 12px; color: #64748b; }
-
-  /* Badges */
+ 
   .badge { padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; white-space: nowrap; letter-spacing: 0.2px; text-transform: uppercase; }
-  .badge-now { background: #ffe4d1; color: #c2410c; }
-  .badge-ip { background: #dbeafe; color: #1e40af; }
-  .badge-done { background: #dcfce7; color: #166534; }
-  .badge-planned { background: #e5e7eb; color: #374151; }
-  .badge-hold { background: #fee2e2; color: #991b1b; }
   .badge-decision { background: #fef3c7; color: #92400e; }
-  .badge-watch { background: #f3e8ff; color: #6b21a8; }
-
-  /* Vision section - 4 strategic tracks */
+ 
+  /* Strategic tracks */
   .vision { background: linear-gradient(135deg, #0a0e1a 0%, #1a1f33 100%); border-radius: 10px; padding: 28px; position: relative; overflow: hidden; }
   .vision::before { content: ""; position: absolute; bottom: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,107,26,0.12) 0%, transparent 70%); }
   .vision h2 { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.2px; }
@@ -50,7 +42,7 @@
   .vgrid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; position: relative; }
   .vcard { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 18px; text-align: left; }
   .vcard.accent { border-color: rgba(255,107,26,0.4); background: rgba(255,107,26,0.06); }
-  .vcard .vlabel { font-size: 10px; font-weight: 700; color: #ff8b4a; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .vcard .vlabel { font-size: 10px; font-weight: 800; color: #ff8b4a; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
   .vcard h3 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.3; }
   .donut-wrap { position: relative; width: 64px; height: 64px; margin-bottom: 12px; }
   .donut-wrap svg { transform: rotate(-90deg); }
@@ -59,8 +51,44 @@
   .v-item { padding: 2px 0 2px 12px; position: relative; }
   .v-item::before { content: "›"; position: absolute; left: 0; color: #ff6b1a; font-weight: 700; }
   .vfooter { margin-top: 18px; font-size: 12px; color: rgba(255,255,255,0.55); font-style: italic; text-align: center; position: relative; }
-
-  /* Quarterly gantt */
+ 
+  /* Problems */
+  .problems-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .problems-col h3 { font-size: 13px; font-weight: 800; color: #0a0e1a; margin-bottom: 10px; letter-spacing: 0.3px; text-transform: uppercase; padding-bottom: 6px; border-bottom: 2px solid #ff6b1a; display: flex; align-items: center; gap: 6px; }
+  .problems-col h3 .count { background: #ff6b1a; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 999px; font-weight: 800; }
+  .pcard { background: #fff; border: 1px solid #e2e8f0; border-left: 3px solid #0a0e1a; border-radius: 6px; padding: 12px 14px; margin-bottom: 8px; }
+  .pcard.ai { border-left-color: #ff6b1a; }
+  .pcard .ptop { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+  .pcard .pid { background: #0a0e1a; color: #fff; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.3px; }
+  .pcard.ai .pid { background: #ff6b1a; }
+  .pcard .ptitle { font-size: 13px; font-weight: 700; color: #0a0e1a; flex: 1; }
+  .pcard .pscope { font-size: 9.5px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+  .pcard .pcost { font-size: 11.5px; color: #334155; line-height: 1.45; margin-top: 4px; }
+  .pcard .pcost b { color: #c2410c; font-weight: 700; }
+  .pcard .psol { font-size: 11px; color: #475569; line-height: 1.45; margin-top: 5px; padding-top: 5px; border-top: 1px dashed #e2e8f0; }
+  .pcard .psol b { color: #0a0e1a; }
+  .pcard .pproof { display: inline-block; margin-top: 4px; padding: 2px 6px; background: #dcfce7; color: #166534; border-radius: 3px; font-size: 10px; font-weight: 700; }
+ 
+  /* Foundation phasing */
+  .foundation { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+  .fhead { display: grid; grid-template-columns: 220px repeat(8, 1fr); background: #0a0e1a; color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: 0.3px; }
+  .fhead > div { padding: 8px 6px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
+  .fhead > div:first-child { text-align: left; padding-left: 14px; }
+  .fhead > div:last-child { border-right: none; }
+  .fhead .year-divider { background: rgba(255,107,26,0.15); color: #ff8b4a; }
+  .frow { display: grid; grid-template-columns: 220px 1fr; border-bottom: 1px solid #f1f5f9; align-items: center; min-height: 56px; }
+  .frow:last-child { border-bottom: none; }
+  .frow:nth-child(even) { background: #fafafa; }
+  .fname { padding: 10px 14px; font-size: 12px; font-weight: 700; color: #0a0e1a; border-right: 1px solid #e2e8f0; line-height: 1.3; }
+  .fname .fsub { font-size: 10.5px; font-weight: 500; color: #64748b; display: block; margin-top: 3px; }
+  .fbar-wrap { padding: 8px 12px; position: relative; height: 100%; }
+  .fbar { color: #fff; padding: 7px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; position: absolute; top: 50%; transform: translateY(-50%); white-space: nowrap; }
+  .fbar.orange { background: linear-gradient(90deg, #ff6b1a 0%, #ff8b4a 90%, rgba(255,139,74,0.3) 100%); }
+  .fbar.dark { background: linear-gradient(90deg, #1e293b, #334155); }
+  .fbar.blue { background: linear-gradient(90deg, #1e40af, #3b82f6); }
+  .fbar.purple { background: linear-gradient(90deg, #6b21a8, #a78bfa); }
+ 
+  /* Gantt */
   .gantt { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
   .gantt-head { display: grid; grid-template-columns: 220px repeat(4, 1fr); background: #0a0e1a; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.3px; }
   .gantt-head > div { padding: 10px 14px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
@@ -69,36 +97,18 @@
   .gantt-row { display: grid; grid-template-columns: 220px repeat(4, 1fr); border-bottom: 1px solid #f1f5f9; align-items: center; }
   .gantt-row:nth-child(even) { background: #fafafa; }
   .gantt-row:last-child { border-bottom: none; }
-  .gantt-name { padding: 10px 14px; font-size: 12.5px; font-weight: 600; color: #0a0e1a; border-right: 1px solid #e2e8f0; }
-  .gantt-cell { padding: 8px 10px; border-right: 1px solid #f1f5f9; min-height: 38px; }
+  .gantt-name { padding: 10px 14px; font-size: 12px; font-weight: 600; color: #0a0e1a; border-right: 1px solid #e2e8f0; line-height: 1.3; }
+  .gantt-name .gtag { font-size: 9.5px; font-weight: 700; color: #ff6b1a; display: block; margin-top: 2px; letter-spacing: 0.3px; }
+  .gantt-cell { padding: 8px 10px; border-right: 1px solid #f1f5f9; min-height: 40px; }
   .gantt-cell:last-child { border-right: none; }
   .bar { border-radius: 4px; padding: 5px 8px; font-size: 10.5px; font-weight: 600; text-align: center; }
   .bar-now { background: linear-gradient(90deg, #ff6b1a, #ff8b4a); color: #fff; }
   .bar-active { background: #dbeafe; color: #1e40af; }
   .bar-planned { background: #e5e7eb; color: #374151; }
   .bar-disc { background: #e0e7ff; color: #4338ca; }
-  .bar-done { background: #16a34a; color: #fff; }
   .bar-watch { background: #f3e8ff; color: #6b21a8; }
-
-  /* In progress cards */
-  .ipgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
-  .ipcard { border: 1px solid #e2e8f0; border-top: 3px solid #ff6b1a; border-radius: 6px; padding: 14px; background: #fff; }
-  .ipcard .iptop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-  .ipcard h3 { font-size: 13.5px; font-weight: 700; color: #0a0e1a; }
-  .ipcard .meta { font-size: 11.5px; color: #64748b; margin-bottom: 6px; }
-  .ipcard .meta strong { color: #0a0e1a; }
-  .ipcard .desc { font-size: 12px; color: #334155; line-height: 1.5; }
-  .ipcard .tag { display: inline-block; margin-top: 8px; padding: 3px 8px; background: #fff7f0; color: #c2410c; border-radius: 3px; font-size: 11px; font-weight: 600; }
-
-  /* Top 5 bets */
-  .bets { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-  .bet { border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px 12px; background: linear-gradient(180deg, #fff 0%, #fafafa 100%); position: relative; }
-  .bet .num { position: absolute; top: -10px; left: 12px; background: #0a0e1a; color: #ff6b1a; font-weight: 800; font-size: 12px; padding: 3px 8px; border-radius: 4px; }
-  .bet h3 { font-size: 12.5px; font-weight: 700; margin-top: 8px; color: #0a0e1a; line-height: 1.3; min-height: 32px; }
-  .bet .who { font-size: 10.5px; color: #64748b; margin-top: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
-  .bet .kpi { font-size: 11px; color: #334155; margin-top: 6px; line-height: 1.4; }
-
-  /* Maturity ladder */
+ 
+  /* Ladder */
   .ladder { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
   .step { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px; text-align: center; position: relative; }
   .step.now { border-color: #ff6b1a; background: #fff7f0; }
@@ -113,8 +123,18 @@
   .step h4 { font-size: 13px; font-weight: 700; margin: 6px 0 8px; color: #0a0e1a; }
   .step .desc { font-size: 11px; color: #334155; line-height: 1.45; min-height: 64px; }
   .step .when { font-size: 11px; font-weight: 700; margin-top: 8px; padding-top: 8px; border-top: 1px solid #e2e8f0; }
-
-  /* Decision card */
+ 
+  /* Fruits */
+  .fruits { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .fruit { background: linear-gradient(135deg, #fff7f0 0%, #ffffff 100%); border: 1px solid #ffe4d1; border-left: 4px solid #ff6b1a; border-radius: 6px; padding: 14px 16px; }
+  .fruit .fh { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .fruit .ficon { width: 28px; height: 28px; background: #ff6b1a; color: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; flex-shrink: 0; }
+  .fruit .ftitle { font-size: 13.5px; font-weight: 700; color: #0a0e1a; line-height: 1.3; }
+  .fruit .fdesc { font-size: 12px; color: #334155; line-height: 1.5; }
+  .fruit .fmetric { font-size: 11px; color: #c2410c; font-weight: 700; margin-top: 6px; padding-top: 6px; border-top: 1px dashed #ffe4d1; }
+  .fruit .fmetric b { color: #0a0e1a; }
+ 
+  /* Decision */
   .decision { border: 1px solid #fde68a; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 18px; background: #fffbeb; }
   .decision .dtop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 8px; flex-wrap: wrap; }
   .decision h3 { font-size: 14.5px; font-weight: 700; color: #0a0e1a; }
@@ -123,7 +143,7 @@
   .decision .q { padding: 10px 12px; background: #fff; border: 1px solid #fde68a; border-radius: 5px; }
   .decision .q .qlab { font-size: 10px; font-weight: 800; color: #92400e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
   .decision .q .qtxt { font-size: 12px; color: #334155; line-height: 1.5; }
-
+ 
   /* Not doing */
   .notdoing { border: 1px solid #fecaca; border-left: 4px solid #dc2626; border-radius: 6px; padding: 18px; background: #fef2f2; }
   .notdoing h3 { font-size: 14.5px; font-weight: 700; color: #0a0e1a; margin-bottom: 4px; }
@@ -131,521 +151,649 @@
   .ndgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
   .nditem { font-size: 12.5px; color: #334155; padding: 4px 0 4px 22px; position: relative; line-height: 1.5; }
   .nditem::before { content: "✕"; position: absolute; left: 0; color: #dc2626; font-weight: 800; top: 4px; }
-
+ 
   /* Outside the box */
-  .otbgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .otbgrid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; }
   .otb { background: linear-gradient(135deg, #0a0e1a 0%, #1a1f33 100%); border-radius: 6px; padding: 14px; color: #fff; position: relative; overflow: hidden; }
   .otb::before { content: ""; position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: radial-gradient(circle, rgba(255,107,26,0.2), transparent 70%); }
-  .otb h3 { font-size: 13px; font-weight: 700; color: #ff8b4a; margin-bottom: 6px; position: relative; }
-  .otb .desc { font-size: 11.5px; line-height: 1.55; color: #cbd5e1; position: relative; }
-
+  .otb h3 { font-size: 12.5px; font-weight: 700; color: #ff8b4a; margin-bottom: 6px; position: relative; }
+  .otb .desc { font-size: 11px; line-height: 1.55; color: #cbd5e1; position: relative; }
+ 
   /* Asks */
   .asks { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; }
-  .asks-row { display: grid; grid-template-columns: 180px 1fr; border-bottom: 1px solid #e2e8f0; font-size: 12.5px; }
+  .asks-row { display: grid; grid-template-columns: 200px 1fr; border-bottom: 1px solid #e2e8f0; font-size: 12.5px; }
   .asks-row:last-child { border-bottom: none; }
   .asks-row:nth-child(even) { background: #fff; }
   .asks-who { padding: 10px 14px; font-weight: 700; color: #0a0e1a; border-right: 1px solid #e2e8f0; background: #fff7f0; }
   .asks-q { padding: 10px 14px; color: #334155; line-height: 1.55; }
-
+ 
   /* Footer */
   .footer { background: #0a0e1a; color: #fff; padding: 16px 36px; display: flex; justify-content: space-between; font-size: 12px; align-items: center; flex-wrap: wrap; gap: 10px; }
   .footer .flow { color: #cbd5e1; }
   .footer .flow .arrow { color: #ff6b1a; margin: 0 6px; font-weight: 700; }
   .footer .conf { color: rgba(255,255,255,0.5); }
-
+ 
   @media print {
     body { padding: 0; background: #fff; }
     .page { max-width: 100%; box-shadow: none; border-radius: 0; }
-    .header, .vision, .footer, .otb { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .header, .vision, .footer, .otb, .pcard { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
 </head>
 <body>
 <div class="page">
-
+ 
   <!-- HEADER -->
   <div class="header">
-    <h1>Data &amp; <span class="accent">Product AI</span> · 2026</h1>
-    <div class="sub">Execution plan · Joint roadmap from the Data and AI team</div>
+    <h1>Data &amp; <span class="accent">AI</span> · Investment Plan</h1>
+    <div class="sub">Problem-first strategic case · where to invest € over the next 18-24 months</div>
+    <div class="horizon">📅 Horizon · Jan 2026 → mid-2027 (foundations extend to Dec 2027)</div>
     <div class="meta">
-      Mário Pereira (AI) · Antonio Peixoto (Data)<br>
+      Antonio Peixoto (Data) · Mário Pereira (AI)<br>
       <span class="pill">FOR GILAD &amp; FOUNDERS</span>
     </div>
   </div>
-
+ 
   <!-- NORTH STAR -->
   <div class="northstar">
     <strong>North Star:</strong> <em>Data creates trust. AI creates leverage. Product turns both into repeatable value.</em><br>
-    Internal velocity first. Partner-facing AI only on certified data. A 12-month plan with quarterly proof points, not a vision essay.
+    This is not a status report. It is an investment case anchored on the <strong>11 high-friction problems</strong> below - problems that today cost partner credibility, internal capacity, and revenue. We are asking founders to fund the foundations that turn them into competitive advantage.
   </div>
-
+ 
   <div class="body">
-
-    <!-- 1. STRATEGIC TRACKS -->
+ 
+    <!-- 1. STRATEGIC ARC -->
     <section>
       <div class="vision">
-        <h2>🎯 Four Strategic Tracks · One Operating Layer</h2>
-        <div class="vsub">Every initiative below maps to one of these. No work in isolation.</div>
+        <h2>🎯 The Strategic Arc · Trust → Leverage → Product → Moat</h2>
+        <div class="vsub">Every problem on this page maps to one of these four value layers. Every euro invested compounds across them.</div>
         <div class="vgrid">
-
+ 
           <div class="vcard accent">
-            <div class="vlabel">⚡ Internal AI</div>
+            <div class="vlabel">🏛 TRUST</div>
             <div class="donut-wrap">
               <svg width="64" height="64" viewBox="0 0 64 64">
                 <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="7"/>
-                <circle cx="32" cy="32" r="26" fill="none" stroke="#ff6b1a" stroke-width="7" stroke-dasharray="163.4" stroke-dashoffset="118.5" stroke-linecap="round"/>
-              </svg>
-              <div class="donut-pct">28%</div>
-            </div>
-            <h3>Leverage</h3>
-            <div class="v-items">
-              <div class="v-item">EVRI knowledge layer live</div>
-              <div class="v-item">ILUS ticket scoring in scope</div>
-              <div class="v-item">Datadog incident copilot next</div>
-            </div>
-          </div>
-
-          <div class="vcard">
-            <div class="vlabel">🌐 External AI</div>
-            <div class="donut-wrap">
-              <svg width="64" height="64" viewBox="0 0 64 64">
-                <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="7"/>
-                <circle cx="32" cy="32" r="26" fill="none" stroke="#3b82f6" stroke-width="7" stroke-dasharray="163.4" stroke-dashoffset="155.2" stroke-linecap="round"/>
-              </svg>
-              <div class="donut-pct">5%</div>
-            </div>
-            <h3>Product</h3>
-            <div class="v-items">
-              <div class="v-item">Prompt Dashboard scoping</div>
-              <div class="v-item">Partner reports auto-generated</div>
-              <div class="v-item">Network intelligence pilot</div>
-            </div>
-          </div>
-
-          <div class="vcard">
-            <div class="vlabel">🏛 Data Foundation</div>
-            <div class="donut-wrap">
-              <svg width="64" height="64" viewBox="0 0 64 64">
-                <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="7"/>
-                <circle cx="32" cy="32" r="26" fill="none" stroke="#06b6d4" stroke-width="7" stroke-dasharray="163.4" stroke-dashoffset="138.9" stroke-linecap="round"/>
+                <circle cx="32" cy="32" r="26" fill="none" stroke="#ff6b1a" stroke-width="7" stroke-dasharray="163.4" stroke-dashoffset="138.9" stroke-linecap="round"/>
               </svg>
               <div class="donut-pct">15%</div>
             </div>
-            <h3>Trust</h3>
+            <h3>Data Foundation</h3>
             <div class="v-items">
-              <div class="v-item">Lakehouse architecture defined</div>
-              <div class="v-item">20 certified metrics in scope</div>
-              <div class="v-item">Semantic layer Q3</div>
+              <div class="v-item">Gold layer + certified metrics</div>
+              <div class="v-item">Governance + lineage + contracts</div>
+              <div class="v-item">Semantic layer (Cube.dev eval)</div>
+              <div class="v-item">Solves: D1, D2, D5</div>
             </div>
           </div>
-
+ 
           <div class="vcard">
-            <div class="vlabel">🧪 Creator Lab</div>
+            <div class="vlabel">⚡ LEVERAGE</div>
             <div class="donut-wrap">
               <svg width="64" height="64" viewBox="0 0 64 64">
                 <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="7"/>
-                <circle cx="32" cy="32" r="26" fill="none" stroke="#a78bfa" stroke-width="7" stroke-dasharray="163.4" stroke-dashoffset="147" stroke-linecap="round"/>
+                <circle cx="32" cy="32" r="26" fill="none" stroke="#3b82f6" stroke-width="7" stroke-dasharray="163.4" stroke-dashoffset="130.7" stroke-linecap="round"/>
               </svg>
-              <div class="donut-pct">10%</div>
+              <div class="donut-pct">20%</div>
             </div>
-            <h3>Governance</h3>
+            <h3>Internal AI</h3>
             <div class="v-items">
-              <div class="v-item">Phase 1 manual hosting (Renato)</div>
-              <div class="v-item">Intake + kill criteria needed</div>
-              <div class="v-item">Phase 2 platform Q3</div>
+              <div class="v-item">Predictive maintenance</div>
+              <div class="v-item">Anomaly detection</div>
+              <div class="v-item">Internal knowledge layer</div>
+              <div class="v-item">Solves: AI1, AI4, AI6</div>
             </div>
           </div>
-
+ 
+          <div class="vcard">
+            <div class="vlabel">🌐 PRODUCT</div>
+            <div class="donut-wrap">
+              <svg width="64" height="64" viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="7"/>
+                <circle cx="32" cy="32" r="26" fill="none" stroke="#06b6d4" stroke-width="7" stroke-dasharray="163.4" stroke-dashoffset="155.2" stroke-linecap="round"/>
+              </svg>
+              <div class="donut-pct">5%</div>
+            </div>
+            <h3>External AI</h3>
+            <div class="v-items">
+              <div class="v-item">Occupancy forecasting</div>
+              <div class="v-item">Location intelligence</div>
+              <div class="v-item">AI-compiled partner intel</div>
+              <div class="v-item">Solves: D3, D4, AI2, AI3, AI5</div>
+            </div>
+          </div>
+ 
+          <div class="vcard">
+            <div class="vlabel">🛡 MOAT</div>
+            <div class="donut-wrap">
+              <svg width="64" height="64" viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="7"/>
+                <circle cx="32" cy="32" r="26" fill="none" stroke="#a78bfa" stroke-width="7" stroke-dasharray="163.4" stroke-dashoffset="163.4" stroke-linecap="round"/>
+              </svg>
+              <div class="donut-pct">0%</div>
+            </div>
+            <h3>Network Intelligence</h3>
+            <div class="v-items">
+              <div class="v-item">Cross-carrier data flywheel</div>
+              <div class="v-item">Monetizable benchmarks</div>
+              <div class="v-item">Neutral host advantage</div>
+              <div class="v-item">Enabled by: all of the above</div>
+            </div>
+          </div>
+ 
         </div>
-        <div class="vfooter">Trust → Leverage → Product → Moat. Each layer feeds the next.</div>
+        <div class="vfooter">% reflects current foundation readiness. The investment case below explains how we move each forward.</div>
       </div>
     </section>
-
-    <!-- 2. QUARTERLY ROADMAP -->
+ 
+    <!-- 2. THE 11 PROBLEMS -->
+    <section>
+      <div class="section-head">
+        <div class="dot" style="background:#0a0e1a"></div>
+        <h2>🎯 The 11 High-Friction Problems · Where Data &amp; AI Pay Back</h2>
+        <div class="end">Quantified pain · scoped solution · this is the spine</div>
+      </div>
+      <div class="problems-wrap">
+ 
+        <div class="problems-col">
+          <h3>Data Problems <span class="count">5</span></h3>
+ 
+          <div class="pcard">
+            <div class="ptop">
+              <span class="pid">D1</span>
+              <span class="ptitle">No Unified View of Network Health</span>
+              <span class="pscope">Int + Ext</span>
+            </div>
+            <div class="pcost">DHL polls our backend every 5 min (<b>~8,640 req/month</b>) because they don't trust our reporting. InPost challenged our SLA figures with incidents we weren't tracking. <b>Partner credibility erosion delays expansion.</b></div>
+            <div class="psol"><b>Solution:</b> Governed Gold layer + semantic layer. One definition, one answer, everywhere - dashboards, APIs, AI.</div>
+          </div>
+ 
+          <div class="pcard">
+            <div class="ptop">
+              <span class="pid">D2</span>
+              <span class="ptitle">Reports Take Disproportionate Effort</span>
+              <span class="pscope">Internal</span>
+            </div>
+            <div class="pcost"><b>10h per partner MBR × 4 partners = 40h/month.</b> At 10 partners, MBR production alone consumes a full FTE doing zero analysis. Scales linearly.</div>
+            <div class="psol"><b>Solution:</b> Gold layer centralises business logic. Automated MBRs: ~10 hours → minutes. Domain self-service via Looker.</div>
+          </div>
+ 
+          <div class="pcard">
+            <div class="ptop">
+              <span class="pid">D3</span>
+              <span class="ptitle">75% Parcel Redirection at Saturated Lockers</span>
+              <span class="pscope">External</span>
+            </div>
+            <div class="pcost">At some locations, <b>up to 75% of parcels are redirected</b> because the locker is full at assignment. Higher last-mile cost, worse UX, lower throughput. Carriers won't share data - sensitivity signals the scale.</div>
+            <div class="psol"><b>Solution:</b> Real-time occupancy + smart redirection (AI3). Also a partner data-sharing hook → compounding flywheel.</div>
+          </div>
+ 
+          <div class="pcard">
+            <div class="ptop">
+              <span class="pid">D4</span>
+              <span class="ptitle">Partners Place Lockers by Gut Feel</span>
+              <span class="pscope">External</span>
+            </div>
+            <div class="pcost">"Where next?" is answered without data today. Suboptimal placement compounds over the deployment lifecycle. <b>Slow partner expansion = slow Bloq.it revenue.</b> Analysis we could productise goes to third-party consultants.</div>
+            <div class="psol"><b>Solution:</b> Location Intelligence Engine - internal utilisation + external enrichment (demographics, transport, weather, competitors). Premium data product.</div>
+          </div>
+ 
+          <div class="pcard">
+            <div class="ptop">
+              <span class="pid">D5</span>
+              <span class="ptitle">No Governed Infrastructure to Deliver Data at Scale</span>
+              <span class="pscope">Int + Ext</span>
+            </div>
+            <div class="pcost">No tenant isolation, no RBAC, no API contract. <b>Without this, DataBloq cannot launch.</b> Every partner integration is bespoke. Security exposure = contractual breach risk.</div>
+            <div class="psol"><b>Solution:</b> Semantic layer + API + tenant isolation + RBAC + caching + multi-format delivery (dashboard, API, CSV, scheduled).</div>
+          </div>
+ 
+        </div>
+ 
+        <div class="problems-col">
+          <h3>AI Problems <span class="count">6</span></h3>
+ 
+          <div class="pcard ai">
+            <div class="ptop">
+              <span class="pid">AI1</span>
+              <span class="ptitle">No Predictive Maintenance Capability</span>
+              <span class="pscope">Int + Ext</span>
+            </div>
+            <div class="pcost">NEXT fleet scaling fast. Battery swaps, motor failures, signal drops trigger reactive dispatches. <b>Every truck roll has direct cost. SLA penalties from preventable failures.</b></div>
+            <div class="psol"><b>Solution:</b> Rule-based thresholds → anomaly detection on battery telemetry. Daily maintenance risk score per bloq. <span class="pproof">Depends on D1</span></div>
+          </div>
+ 
+          <div class="pcard ai">
+            <div class="ptop">
+              <span class="pid">AI2</span>
+              <span class="ptitle">Location Scoring is Descriptive, Not Prescriptive</span>
+              <span class="pscope">External</span>
+            </div>
+            <div class="pcost">D4 provides the data. Without ML, the recommendation stays manual. Suboptimal decisions compound over locker lifecycle. <b>Lost expansion velocity per partner.</b></div>
+            <div class="psol"><b>Solution:</b> ML scoring model on internal + external features. Ranked recommendations with confidence. <span class="pproof">Depends on D4, D5</span></div>
+          </div>
+ 
+          <div class="pcard ai">
+            <div class="ptop">
+              <span class="pid">AI3</span>
+              <span class="ptitle">No Demand Forecasting / Occupancy Prediction</span>
+              <span class="pscope">Int + Ext</span>
+            </div>
+            <div class="pcost">D3 gives real-time visibility. Without forecasting, capacity adjustments are <b>always reactive</b>. Peak overload = missed parcels, emergency sites, blind overstaffing.</div>
+            <div class="psol"><b>Solution:</b> Time-series forecasting (Prophet) per location × partner × day. 4/8/24h horizons. Foundation for intelligent routing. <span class="pproof">Depends on D1, D3</span></div>
+          </div>
+ 
+          <div class="pcard ai">
+            <div class="ptop">
+              <span class="pid">AI4</span>
+              <span class="ptitle">We Learn About Issues When Partners Complain</span>
+              <span class="pscope">Int + Ext</span>
+            </div>
+            <div class="pcost"><b>InPost cited 5,000 crashed labels and black screens invisible to our SLA reports.</b> Shifts partner relationship from "trusted operator" to "vendor we monitor."</div>
+            <div class="psol"><b>Solution:</b> Statistical anomaly detection on event streams. Classification (hardware vs user vs environment). Alerts with hypothesis before partners notice. <span class="pproof">Depends on D1</span></div>
+          </div>
+ 
+          <div class="pcard ai">
+            <div class="ptop">
+              <span class="pid">AI5</span>
+              <span class="ptitle">Manual Partner Insight Generation Won't Scale</span>
+              <span class="pscope">External</span>
+            </div>
+            <div class="pcost">Partners want answers, not dashboards. <b>40h/month on MBRs today, linear scaling.</b> At 10 partners, MBR production becomes a dedicated FTE doing zero analysis.</div>
+            <div class="psol"><b>Solution:</b> LLM-powered narrative from certified metrics. Cube.dev agentic analytics shares infrastructure with D5. <span class="pproof">Depends on D1, D2, D5</span></div>
+          </div>
+ 
+          <div class="pcard ai">
+            <div class="ptop">
+              <span class="pid">AI6</span>
+              <span class="ptitle">Tribal Knowledge Lives Across Tools</span>
+              <span class="pscope">Internal</span>
+            </div>
+            <div class="pcost">Onboarding new joiners takes weeks. Same questions answered repeatedly in Slack. Confluence + Drive + threads are not searchable as one. <b>Hidden cost compounds across every team.</b></div>
+            <div class="psol"><b>Solution:</b> Bloq.it knowledge layer over Confluence + Slack + Drive. Pattern proven on EVRI - replicates to every account &amp; team. <span class="pproof">✓ EVRI prototype validates</span></div>
+          </div>
+ 
+        </div>
+ 
+      </div>
+    </section>
+ 
+    <!-- 3. FOUNDATION PHASING -->
     <section>
       <div class="section-head">
         <div class="dot" style="background:#ff6b1a"></div>
-        <h2>📅 Quarterly Roadmap · 2026</h2>
-        <div class="end">12-month commitment plan</div>
+        <h2>🏗 Foundation Phasing · 2026-2027</h2>
+        <div class="end">Four parallel work streams · the investment spine</div>
       </div>
-      <div class="gantt">
-        <div class="gantt-head">
-          <div>Initiative</div>
-          <div>Q1 2026 · Foundations</div>
-          <div>Q2 · Internal Wins</div>
-          <div>Q3 · Partner Beta</div>
-          <div>Q4 · Scale &amp; Package</div>
+      <div class="foundation">
+        <div class="fhead">
+          <div>Foundation Stream</div>
+          <div>Q1 26</div>
+          <div>Q2 26</div>
+          <div>Q3 26</div>
+          <div>Q4 26</div>
+          <div class="year-divider">Q1 27</div>
+          <div>Q2 27</div>
+          <div>Q3 27</div>
+          <div>Q4 27</div>
         </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">EVRI Knowledge Layer</div>
-          <div class="gantt-cell"><div class="bar bar-now">🟠 Live now</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">Generalize → ops + CS</div></div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"></div>
+ 
+        <div class="frow">
+          <div class="fname">Gold Layer<span class="fsub">Certified metrics &amp; data models · never-ending</span></div>
+          <div class="fbar-wrap"><div class="fbar orange" style="left:1.5%;width:50%">Jan 2026 → Dec 2026 · ongoing →</div></div>
         </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">ILUS (ticket urgency)</div>
-          <div class="gantt-cell"><div class="bar bar-now">🟠 In build</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">Production rollout</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">Feeds TIS (Carmen)</div></div>
-          <div class="gantt-cell"></div>
+ 
+        <div class="frow">
+          <div class="fname">Governance<span class="fsub">DataHub, metric lifecycle, data contracts, Looker, lineage</span></div>
+          <div class="fbar-wrap"><div class="fbar dark" style="left:25%;width:73%">Mar 2026 → Dec 2027</div></div>
         </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">20 Certified Metrics</div>
-          <div class="gantt-cell"><div class="bar bar-active">Define + 5 shipped</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">10 metrics live</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">15 + semantic layer</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">20 certified ✓</div></div>
+ 
+        <div class="frow">
+          <div class="fname">Data Provision<span class="fsub">Semantic layer + API + tenant isolation + RBAC + caching + enrichment</span></div>
+          <div class="fbar-wrap"><div class="fbar blue" style="left:37%;width:50%">Jun 2026 → Jun 2027</div></div>
         </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">Datadog Incident Copilot</div>
-          <div class="gantt-cell"><div class="bar bar-disc">Discovery</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">Internal beta</div></div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"></div>
+ 
+        <div class="frow">
+          <div class="fname">AI Readiness &amp; First Models<span class="fsub">Production ML loop, evals, model registry, first prod models</span></div>
+          <div class="fbar-wrap"><div class="fbar purple" style="left:62.5%;width:36%">Jun 2027 →</div></div>
         </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">Sales / Account Copilot</div>
-          <div class="gantt-cell"><div class="bar bar-disc">Scoping w/ Commercial</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">v1 (CRM + Fathom)</div></div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"></div>
-        </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">Backoffice NL Assistant</div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"><div class="bar bar-active">Read-only alpha</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">Beta to all ops</div></div>
-          <div class="gantt-cell"></div>
-        </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">Ops Copilot v1</div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"><div class="bar bar-active">Unified incident view</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">Recommendations layer</div></div>
-          <div class="gantt-cell"></div>
-        </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">Predictive Maintenance v1</div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"><div class="bar bar-disc">Pilot · NEXT fleet</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">SLA risk engine</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">Auto-dispatch (1 case)</div></div>
-        </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">Partner Prompt Dashboard</div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"><div class="bar bar-disc">Build-vs-buy decision</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">EVRI beta · 5 metrics</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">2nd partner</div></div>
-        </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">Demand / Capacity Forecast</div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"><div class="bar bar-active">1 carrier-region pair</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">Multi-region</div></div>
-        </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">Technician Recommender</div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"><div class="bar bar-active">Field rollout</div></div>
-          <div class="gantt-cell"></div>
-        </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">Network Intelligence Pilot</div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"><div class="bar bar-watch">Data rights review</div></div>
-          <div class="gantt-cell"><div class="bar bar-disc">Cross-carrier pilot</div></div>
-        </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">Partner Intelligence Pack</div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"></div>
-          <div class="gantt-cell"><div class="bar bar-planned">Monetization signal</div></div>
-        </div>
-
-        <div class="gantt-row">
-          <div class="gantt-name">Creator Lab Governance</div>
-          <div class="gantt-cell"><div class="bar bar-disc">Intake + kill criteria</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">v1 hosting 3-5 tools</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">v2 self-service</div></div>
-          <div class="gantt-cell"><div class="bar bar-active">Graduation model</div></div>
-        </div>
-
+ 
       </div>
+      <div style="margin-top:10px;font-size:11.5px;color:#64748b;text-align:center;font-style:italic">Streams overlap by design. Each unlocks the next. Without funded foundations, the AI capabilities below have no ground to stand on.</div>
     </section>
-
-    <!-- 3. IN PROGRESS NOW -->
-    <section>
-      <div class="section-head">
-        <div class="dot" style="background:#ff6b1a"></div>
-        <h2>🟠 In Progress Right Now</h2>
-        <div class="end">Live work · already producing signal</div>
-      </div>
-      <div class="ipgrid">
-        <div class="ipcard">
-          <div class="iptop">
-            <h3>EVRI Knowledge Center</h3>
-            <span class="badge badge-now">Live</span>
-          </div>
-          <div class="meta"><strong>Mário</strong> · Confluence + Slack RAG via Claude Project</div>
-          <div class="desc">Demo call this week with EVRI CDU team. Queries covering webhooks, driver auth, courier flow, barcode validation. Pattern replicable across all partner accounts.</div>
-          <span class="tag">✓ Replication path identified</span>
-        </div>
-        <div class="ipcard">
-          <div class="iptop">
-            <h3>ILUS Ticket Scoring</h3>
-            <span class="badge badge-now">In build</span>
-          </div>
-          <div class="meta"><strong>Mário + João Soares + Carmen</strong> · Streamlit + scoring formula</div>
-          <div class="desc">Replacing the near-useless Freshservice priority field with a deterministic urgency score. Feeds into Carmen's broader TIS initiative. Q1 production target.</div>
-          <span class="tag">✓ Full spec ready in Claude Code</span>
-        </div>
-        <div class="ipcard">
-          <div class="iptop">
-            <h3>Sales Margin Calculator</h3>
-            <span class="badge badge-ip">Pre-launch</span>
-          </div>
-          <div class="meta"><strong>Erwan + Mário</strong> · React + Supabase + Cloudflare Access</div>
-          <div class="desc">Internal pricing tool. Held for IT consultation review (shadow IT, GDPR, data security gates) before going live with real pricing data.</div>
-          <span class="tag">⚠ Awaiting IT sign-off</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. TOP 5 YEAR-1 BETS -->
-    <section>
-      <div class="section-head">
-        <div class="dot" style="background:#16a34a"></div>
-        <h2>🎲 Top 5 Year-1 Bets</h2>
-        <div class="end">Where we will spend most of our chips</div>
-      </div>
-      <div class="bets">
-        <div class="bet">
-          <span class="num">01</span>
-          <h3>Certified metrics + semantic layer</h3>
-          <div class="who">Antonio · Foundation</div>
-          <div class="kpi">20 metrics, single source of truth, AI-queryable.</div>
-        </div>
-        <div class="bet">
-          <span class="num">02</span>
-          <h3>AI Knowledge Layer (all internal)</h3>
-          <div class="who">Mário · Internal</div>
-          <div class="kpi">EVRI pattern → every team, every partner account.</div>
-        </div>
-        <div class="bet">
-          <span class="num">03</span>
-          <h3>Ops + Ticket + Incident copilot</h3>
-          <div class="who">Mário + Ops · Internal</div>
-          <div class="kpi">Measurable MTTR and triage time reduction.</div>
-        </div>
-        <div class="bet">
-          <span class="num">04</span>
-          <h3>Partner Prompt Dashboard (certified data only)</h3>
-          <div class="who">Joint · External</div>
-          <div class="kpi">EVRI beta Q3. Read-only. Bought engine, custom skin.</div>
-        </div>
-        <div class="bet">
-          <span class="num">05</span>
-          <h3>Predictive + SLA risk pilots</h3>
-          <div class="who">Joint · External</div>
-          <div class="kpi">Moves Ops from reactive to proactive on real data.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. AI MATURITY LADDER -->
+ 
+    <!-- 4. CAPABILITY ROADMAP -->
     <section>
       <div class="section-head">
         <div class="dot" style="background:#3b82f6"></div>
-        <h2>🪜 AI Maturity Ladder · Anchor Founder Expectations</h2>
-        <div class="end">Where we will be, level by level</div>
+        <h2>📅 Capability Roadmap · Problems → Solutions Across 18 Months</h2>
+        <div class="end">What each half delivers · mapped to problems</div>
+      </div>
+      <div class="gantt">
+        <div class="gantt-head">
+          <div>Capability</div>
+          <div>H1 2026 · Build Trust</div>
+          <div>H2 2026 · Internal Wins</div>
+          <div>H1 2027 · Partner Value</div>
+          <div>H2 2027 · Moat &amp; Monetize</div>
+        </div>
+ 
+        <div class="gantt-row">
+          <div class="gantt-name">Unified Network View<span class="gtag">→ D1</span></div>
+          <div class="gantt-cell"><div class="bar bar-now">Gold layer + first 20 metrics</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Internal certified view live</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Partner-facing v1</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Multi-partner standard</div></div>
+        </div>
+ 
+        <div class="gantt-row">
+          <div class="gantt-name">Automated Partner MBRs<span class="gtag">→ D2</span></div>
+          <div class="gantt-cell"><div class="bar bar-disc">Template + logic scoping</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">First auto-MBR (1 partner)</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">All 4 partners automated</div></div>
+          <div class="gantt-cell"></div>
+        </div>
+ 
+        <div class="gantt-row">
+          <div class="gantt-name">Data Provision Layer<span class="gtag">→ D5</span></div>
+          <div class="gantt-cell"><div class="bar bar-disc">Cube.dev evaluation</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Semantic layer + API alpha</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Tenant isolation + RBAC</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Production · multi-tenant</div></div>
+        </div>
+ 
+        <div class="gantt-row">
+          <div class="gantt-name">Predictive Maintenance<span class="gtag">→ AI1</span></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-disc">Rule-based thresholds</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Anomaly model · NEXT fleet</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Risk score in Ops dispatch</div></div>
+        </div>
+ 
+        <div class="gantt-row">
+          <div class="gantt-name">Anomaly Detection<span class="gtag">→ AI4</span></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-disc">Event stream expansion</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Statistical detection live</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Classification + root cause</div></div>
+        </div>
+ 
+        <div class="gantt-row">
+          <div class="gantt-name">Internal Knowledge Layer<span class="gtag">→ AI6</span></div>
+          <div class="gantt-cell"><div class="bar bar-now">EVRI prototype live</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Generalised to ops + CS</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Account-level rollouts</div></div>
+          <div class="gantt-cell"></div>
+        </div>
+ 
+        <div class="gantt-row">
+          <div class="gantt-name">Occupancy Forecast<span class="gtag">→ D3 / AI3</span></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-disc">Data model + baseline</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Prophet forecast · 1 partner</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Smart redirection v1</div></div>
+        </div>
+ 
+        <div class="gantt-row">
+          <div class="gantt-name">Location Intelligence<span class="gtag">→ D4 / AI2</span></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-disc">Existing-site scoring</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">External enrichment pipeline</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Greenfield ML scoring</div></div>
+        </div>
+ 
+        <div class="gantt-row">
+          <div class="gantt-name">AI-Compiled Partner Intel<span class="gtag">→ AI5</span></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-active">LLM narrative · agentic eval</div></div>
+          <div class="gantt-cell"><div class="bar bar-active">Productised partner intel</div></div>
+        </div>
+ 
+        <div class="gantt-row">
+          <div class="gantt-name">Network Intelligence<span class="gtag">→ MOAT</span></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"></div>
+          <div class="gantt-cell"><div class="bar bar-watch">Data rights framework</div></div>
+          <div class="gantt-cell"><div class="bar bar-disc">Cross-carrier pilot</div></div>
+        </div>
+ 
+      </div>
+    </section>
+ 
+    <!-- 5. AI MATURITY LADDER -->
+    <section>
+      <div class="section-head">
+        <div class="dot" style="background:#a78bfa"></div>
+        <h2>🪜 AI Maturity Ladder · Anchoring Founder Expectations</h2>
+        <div class="end">No autonomous promises before foundations land</div>
       </div>
       <div class="ladder">
         <div class="step now">
           <div class="lvl">L1 · NOW</div>
           <h4>Search</h4>
           <div class="desc">Finds answers across Drive, Slack, Confluence, Backoffice</div>
-          <div class="when" style="color:#c2410c">Q1 · Q2</div>
+          <div class="when" style="color:#c2410c">H1 2026</div>
         </div>
         <div class="step now">
           <div class="lvl">L2 · NOW</div>
           <h4>Explain</h4>
           <div class="desc">Summarizes incidents, parcels, lockers, routes, tickets</div>
-          <div class="when" style="color:#c2410c">Q1 · Q2</div>
+          <div class="when" style="color:#c2410c">H1-H2 2026</div>
         </div>
         <div class="step soon">
-          <div class="lvl">L3 · Q2-Q3</div>
+          <div class="lvl">L3 · 2026</div>
           <h4>Recommend</h4>
           <div class="desc">Suggests fixes, dispatch, routing, customer responses</div>
-          <div class="when" style="color:#1e40af">Q2 · Q3</div>
+          <div class="when" style="color:#1e40af">H2 2026 - H1 2027</div>
         </div>
         <div class="step soon">
-          <div class="lvl">L4 · Q3</div>
+          <div class="lvl">L4 · 2027</div>
           <h4>Draft</h4>
           <div class="desc">Creates tickets, reports, partner updates, SQL, runbooks</div>
-          <div class="when" style="color:#1e40af">Q3</div>
+          <div class="when" style="color:#1e40af">H1 2027</div>
         </div>
         <div class="step later">
-          <div class="lvl">L5 · Q4</div>
+          <div class="lvl">L5 · 2027</div>
           <h4>Execute (approved)</h4>
           <div class="desc">Performs actions only after human confirmation</div>
-          <div class="when" style="color:#6b21a8">Q4 · 2027</div>
+          <div class="when" style="color:#6b21a8">H2 2027</div>
         </div>
         <div class="step future">
-          <div class="lvl">L6 · 2027+</div>
+          <div class="lvl">L6 · 2028+</div>
           <h4>Autonomous</h4>
           <div class="desc">Limited closed-loop automation for low-risk cases only</div>
-          <div class="when" style="color:#64748b">2027+</div>
+          <div class="when" style="color:#64748b">2028+</div>
         </div>
       </div>
-      <div style="margin-top:10px;font-size:12px;color:#dc2626;text-align:center"><strong>⛔ Hard line:</strong> no "autonomous self-healing fleet" promises in 2026.</div>
+      <div style="margin-top:10px;font-size:12px;color:#dc2626;text-align:center"><strong>⛔ Hard line:</strong> no "self-healing autonomous fleet" promises before mid-2027. Foundation Phasing is the gate.</div>
     </section>
-
-    <!-- 6. DECISIONS PENDING -->
+ 
+    <!-- 6. APPETIZING FRUITS -->
     <section>
       <div class="section-head">
-        <div class="dot" style="background:#f59e0b"></div>
-        <h2>⚠️ Decisions Pending · Need Gilad / Founders</h2>
-        <div class="end">Blockers for our roadmap commitment</div>
+        <div class="dot" style="background:#ff6b1a"></div>
+        <h2>🍊 What Founders Will See by End of 2027</h2>
+        <div class="end">The appetizing fruits · what € buys</div>
       </div>
-      <div class="decision">
-        <div class="dtop">
-          <h3>Three decisions we need this month</h3>
-          <span class="badge badge-decision">Action Required</span>
+      <div class="fruits">
+ 
+        <div class="fruit">
+          <div class="fh">
+            <div class="ficon">1</div>
+            <div class="ftitle">Partners stop polling our APIs every 5 minutes</div>
+          </div>
+          <div class="fdesc">Every partner has a certified, real-time view of network health. SLA disputes drop to near-zero. Engineering reclaims the load currently wasted on ungoverned polling.</div>
+          <div class="fmetric"><b>D1</b> · From DHL's ~8.6k req/month polling to a trusted single view</div>
         </div>
-        <div class="desc">Each shapes a different part of the 2026 roadmap. Without these answers we either over-commit, under-commit, or stall on legal review.</div>
-        <div class="qs">
-          <div class="q">
-            <div class="qlab">🔨 Build vs Buy</div>
-            <div class="qtxt"><strong>Prompt Dashboard engine.</strong> Snowflake Cortex, Hex Magic, Looker, ThoughtSpot all ship this now. Recommendation: buy the engine, own the semantic layer + partner skin. Need a position.</div>
+ 
+        <div class="fruit">
+          <div class="fh">
+            <div class="ficon">2</div>
+            <div class="ftitle">MBR production drops from 10 hours to under 10 minutes</div>
           </div>
-          <div class="q">
-            <div class="qlab">⚖️ Data Rights</div>
-            <div class="qtxt"><strong>Neutral Host legal framework.</strong> Cross-carrier intelligence depends on data-sharing consent. GDPR + EU competition law are non-trivial. Need legal sign-off before Q3 pilot scoping.</div>
-          </div>
-          <div class="q">
-            <div class="qlab">🎯 Q1 Wedge for Lopes</div>
-            <div class="qtxt"><strong>Name the deliverable.</strong> Lopes wants short-term value. Tell us what concrete artifact would satisfy him in 90 days and we will build the roadmap backward from it.</div>
-          </div>
-          <div class="q">
-            <div class="qlab">🧑‍💼 Risk Appetite</div>
-            <div class="qtxt"><strong>How autonomous is acceptable?</strong> Read-only / draft / approve-to-execute / autonomous. Determines L5 timing and what we can promise partners.</div>
-          </div>
+          <div class="fdesc">Automated partner reports with AI-compiled narrative. Analysts spend time on insight, not assembly. Scales to 10+ partners without adding headcount.</div>
+          <div class="fmetric"><b>D2 + AI5</b> · 40h/month reclaimed today · 100h+/month at 10 partners</div>
         </div>
+ 
+        <div class="fruit">
+          <div class="fh">
+            <div class="ficon">3</div>
+            <div class="ftitle">75% redirections drop dramatically at saturated locations</div>
+          </div>
+          <div class="fdesc">Occupancy forecasting + smart redirection. Carriers gain confidence to share delivery data → compounding data flywheel that no competitor can replicate.</div>
+          <div class="fmetric"><b>D3 + AI3</b> · Directly attacks the biggest external cost driver</div>
+        </div>
+ 
+        <div class="fruit">
+          <div class="fh">
+            <div class="ficon">4</div>
+            <div class="ftitle">Location Intelligence becomes a paid product</div>
+          </div>
+          <div class="fdesc">"Deploy here next" - ranked, ML-scored, with confidence. Premium tier for enterprise partners. Analysis revenue that today goes to third-party consultants comes home.</div>
+          <div class="fmetric"><b>D4 + AI2</b> · New monetization line · partner expansion accelerant</div>
+        </div>
+ 
+        <div class="fruit">
+          <div class="fh">
+            <div class="ficon">5</div>
+            <div class="ftitle">We know about issues before partners do</div>
+          </div>
+          <div class="fdesc">Statistical anomaly detection on all event streams. Incidents like InPost's 5k crashed labels are caught and classified before complaints arrive. Trust restored.</div>
+          <div class="fmetric"><b>AI4</b> · "Vendor we monitor" → trusted operator</div>
+        </div>
+ 
+        <div class="fruit">
+          <div class="fh">
+            <div class="ficon">6</div>
+            <div class="ftitle">DataBloq launches as a multi-tenant data product</div>
+          </div>
+          <div class="fdesc">Semantic layer + API + tenant isolation + RBAC. Every partner integration becomes templated, not bespoke. Foundation for a paid AI tier.</div>
+          <div class="fmetric"><b>D5</b> · The product layer that makes everything else sellable</div>
+        </div>
+ 
       </div>
     </section>
-
-    <!-- 7. WHAT WE WILL NOT DO -->
+ 
+    <!-- 7. NOT IN SCOPE -->
     <section>
       <div class="section-head">
         <div class="dot" style="background:#dc2626"></div>
-        <h2>🚫 What We Will NOT Commit to in 2026</h2>
+        <h2>🚫 Not in Scope for 2026-2027</h2>
         <div class="end">Defending the negative wins respect</div>
       </div>
       <div class="notdoing">
-        <h3>Out of scope for 2026 · directionally possible later</h3>
-        <div class="sub">If founders push for these, we will reframe rather than commit.</div>
+        <h3>Out of scope · directionally possible in 2028+</h3>
+        <div class="sub">If founders push for these, we reframe rather than commit. Foundation Phasing is the prerequisite.</div>
         <div class="ndgrid">
           <div class="nditem">Fully autonomous self-healing fleets</div>
           <div class="nditem">Real-time cross-carrier routing across all partners</div>
-          <div class="nditem">A mature data monetization business</div>
+          <div class="nditem">A mature data monetization business at scale</div>
           <div class="nditem">A non-technical "anyone deploys" Creator Lab</div>
           <div class="nditem">AI replacing Looker / Backoffice wholesale</div>
-          <div class="nditem">Predictive maintenance without labeled failure data</div>
           <div class="nditem">External AI exposed against uncertified data</div>
           <div class="nditem">Custom-built text-to-SQL engine from scratch</div>
+          <div class="nditem">Production ML before AI Readiness phase (mid-2027)</div>
         </div>
       </div>
     </section>
-
-    <!-- 8. OUTSIDE THE BOX -->
+ 
+    <!-- 8. ADJACENT PLAYS -->
     <section>
       <div class="section-head">
         <div class="dot" style="background:#a78bfa"></div>
-        <h2>💡 Outside-the-Box Plays</h2>
-        <div class="end">Differentiate vs. any LLM-on-dashboards story</div>
+        <h2>💡 Adjacent Plays · Where the Moat Becomes Monetizable</h2>
+        <div class="end">Once foundations land, these become possible</div>
       </div>
       <div class="otbgrid">
         <div class="otb">
           <h3>📡 Locker-as-Sensor</h3>
-          <div class="desc">Thousands of fixed instrumented endpoints = a privately-held urban sensor network. Anonymized foot traffic, parcel volume, weather correlation. Sellable to retailers, urban planners, insurers. No competitor has the footprint.</div>
+          <div class="desc">Thousands of instrumented endpoints = a private urban sensor network. Anonymized foot traffic, parcel volume, weather correlation. Sellable to retailers, urban planners, insurers.</div>
         </div>
         <div class="otb">
           <h3>📊 Carrier Benchmarking</h3>
-          <div class="desc">"Your first-attempt rate is bottom quartile vs EU postal companies your size." Carriers will pay for it. Lower technical bar than cross-carrier routing. Monetizable in 2026.</div>
-        </div>
-        <div class="otb">
-          <h3>🤝 Founders' Co-pilot</h3>
-          <div class="desc">Founders want answers, not dashboards. Make founders the first internal customer of DataBloq's external interface. Forces the semantic layer to be production-grade, fast.</div>
-        </div>
-        <div class="otb">
-          <h3>🗑 Kill the Dashboard</h3>
-          <div class="desc">Audit dashboard usage logs. Retire 50% of low-usage dashboards in favor of NL queries against the same semantic layer. Gives Prompt Dashboard a captive internal audience before external.</div>
-        </div>
-        <div class="otb">
-          <h3>🎭 Synthetic Scenario Factory</h3>
-          <div class="desc">Vandalism, fraud, tampering, failed handovers are rare and hard to label. Generative pipeline produces plausible scenarios for training detection models. Defensible capability.</div>
+          <div class="desc">"Your first-attempt rate is bottom quartile vs EU postal companies your size." Carriers will pay. Lower bar than cross-carrier routing. 2027 monetization candidate.</div>
         </div>
         <div class="otb">
           <h3>🧬 Locker Digital Twins</h3>
           <div class="desc">Per-asset failure-mode prediction trained on each unit's sensor history. Uniquely possible because Bloq.it owns the hardware. No software-only competitor can build this.</div>
         </div>
+        <div class="otb">
+          <h3>🎭 Synthetic Scenario Factory</h3>
+          <div class="desc">Vandalism, fraud, tampering, failed handovers are rare and hard to label. Generative pipeline produces plausible training scenarios. Defensible capability.</div>
+        </div>
       </div>
     </section>
-
-    <!-- 9. WHAT WE NEED FROM FOUNDERS -->
+ 
+    <!-- 9. INVESTMENT ASKS -->
+    <section>
+      <div class="section-head">
+        <div class="dot" style="background:#f59e0b"></div>
+        <h2>💰 Investment Asks · What We Need to Make This Real</h2>
+        <div class="end">The decisions and the €</div>
+      </div>
+      <div class="decision">
+        <div class="dtop">
+          <h3>The case for funding · four asks this month</h3>
+          <span class="badge badge-decision">Action Required</span>
+        </div>
+        <div class="desc">Each unblocks a different part of the 18-24 month plan. Without these, Foundation Phasing slips and the fruits above don't ripen.</div>
+        <div class="qs">
+          <div class="q">
+            <div class="qlab">💵 Headcount &amp; capacity</div>
+            <div class="qtxt">Data engineering + analytics engineering + applied ML headcount across 2026-2027, defined per foundation phase. <b>This is the biggest € lever.</b></div>
+          </div>
+          <div class="q">
+            <div class="qlab">🛠 Semantic Layer Decision</div>
+            <div class="qtxt"><b>Cube.dev under evaluation</b> (includes agentic analytics, ties D5 + AI5). Decision owners: <b>Data Engineering + Product + Architecture</b>. Approval needed by Q2.</div>
+          </div>
+          <div class="q">
+            <div class="qlab">⚖️ Data Rights Framework</div>
+            <div class="qtxt">Cross-carrier intelligence + monetizable benchmarks need a partner data-sharing legal framework. GDPR + EU competition. Legal sign-off by Q3 2026.</div>
+          </div>
+          <div class="q">
+            <div class="qlab">🎯 Founder Priority Signal</div>
+            <div class="qtxt">Top 3 business outcomes for 2026-2027: cost per parcel, failed deliveries, partner retention, deployment speed, new revenue? The roadmap optimizes against this signal.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- 10. ASKS BY AUDIENCE -->
     <section>
       <div class="section-head">
         <div class="dot" style="background:#0a0e1a"></div>
-        <h2>🎤 What We Need · By Audience</h2>
-        <div class="end">The asks behind this plan</div>
+        <h2>🎤 Asks by Audience</h2>
+        <div class="end">What we need from each stakeholder</div>
       </div>
       <div class="asks">
         <div class="asks-row">
           <div class="asks-who">Gilad</div>
-          <div class="asks-q">Confirm the 3 top business outcomes for 2026 · Pick the lighthouse partner (EVRI is the natural answer) · Name the Q1 deliverable that satisfies Lopes · Approve the build-vs-buy direction on Prompt Dashboard · Confirm AI risk appetite (read-only → autonomous)</div>
+          <div class="asks-q">Confirm the strategic arc (Trust → Leverage → Product → Moat) · Approve the 11 problems as the spine · Pick the lighthouse partner for the H1 2027 partner-facing wave · Confirm AI risk appetite across the maturity ladder</div>
         </div>
         <div class="asks-row">
           <div class="asks-who">Founders</div>
-          <div class="asks-q">Sign-off on the "not in 2026" list · Approve the kill criteria for Creator Lab · Greenlight legal scope on cross-carrier data rights · Headcount + infra budget commitment</div>
+          <div class="asks-q">Headcount + infra budget for foundation phases · Sign-off on "not in scope" list · Greenlight legal scope on data rights · Commit to a 1.5-year horizon, not a quarterly one</div>
+        </div>
+        <div class="asks-row">
+          <div class="asks-who">Architecture · Data Eng · Product</div>
+          <div class="asks-q">Joint owners of the semantic layer decision (Cube.dev evaluation) · Define data contracts with Engineering · DataHub production rollout · Looker governance model</div>
         </div>
         <div class="asks-row">
           <div class="asks-who">Antonio &amp; Mário</div>
-          <div class="asks-q">Joint internal friction map (counterpart to Erwan's external tree) · Two concrete Q1 commitments (one per side) · One-page roadmap to replace the 20-page vision · Monthly cadence on this artifact</div>
-        </div>
-        <div class="asks-row">
-          <div class="asks-who">Platform (Renato)</div>
-          <div class="asks-q">Define the seam · Who owns model deployment infra, evals, observability, semantic layer · Whether we are users of Lab v1/v2 or run our own track</div>
+          <div class="asks-q">Monthly cadence on this artifact · Joint internal friction map (counterpart to Erwan's external tree) · First Gold-layer metrics shipped by end Q1 · EVRI Knowledge pattern productised by end Q2</div>
         </div>
       </div>
     </section>
-
+ 
   </div>
-
+ 
   <!-- FOOTER -->
   <div class="footer">
-    <span class="flow">Trust <span class="arrow">›</span> Internal Velocity <span class="arrow">›</span> Partner-facing AI <span class="arrow">›</span> Productized Moat <span class="arrow">›</span> Monetization</span>
-    <span class="conf">Bloq.it · Data &amp; Product AI 2026 · Internal</span>
+    <span class="flow"><b style="color:#fff">Trust</b> <span class="arrow">›</span> Internal Leverage <span class="arrow">›</span> Partner-facing Product <span class="arrow">›</span> Network Moat <span class="arrow">›</span> Monetization</span>
+    <span class="conf">Bloq.it · Data &amp; AI Investment Plan 2026-2027 · Internal</span>
   </div>
-
+ 
 </div>
 </body>
 </html>
